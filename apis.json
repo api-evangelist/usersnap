@@ -1,0 +1,85 @@
+{
+    "name": "Usersnap",
+    "description": "Usersnap Classic & CX help you build products your customers love by using smart feedback, With visual bug tracking and NPS scoring integrated into your website, app, or customer experience. Try it today.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1594-usersnap.jpg",
+    "tags": [
+        "have api",
+        "screenshots",
+        "target"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/usersnap\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Usersnap",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1594-usersnap.jpg",
+            "humanURL": "https:\/\/usersnap.com\/support\/docs\/usersnapapi",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/usersnap-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/usersnap-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Base",
+            "url": "http:\/\/api.usersnap.com"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/www.usersnap.com\/blog"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/usersnap"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/usersnap"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/usersnap.com\/docs"
+        },
+        {
+            "type": "Email",
+            "url": "sales@usersnap.com"
+        },
+        {
+            "type": "Email",
+            "url": "press@usersnap.com"
+        },
+        {
+            "type": "Email",
+            "url": "contact@usersnap.com"
+        },
+        {
+            "type": "Email",
+            "url": "help@usersnap.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/usersnap"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/usersnap"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/usersnap.com\/support\/docs\/usersnapapi"
+        }
+    ]
+}

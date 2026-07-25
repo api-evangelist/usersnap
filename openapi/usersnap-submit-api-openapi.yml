@@ -1,0 +1,173 @@
+openapi: 3.0.0
+info:
+  title: Usersnap feedback submit API
+  description: Make feedback matter! Now with a RESTful API
+  termsOfService: https://usersnap.com/terms-of-service
+  contact:
+    name: Usersnap Contact
+    url: https://usersnap.com/contact
+    email: contact@usersnap.com
+  version: '0.1'
+servers:
+- url: https://platform.usersnap.com/v0.1
+tags:
+- name: submit
+  description: Submit feedback
+paths:
+  /projects/{api_key}/feedbacks:
+    post:
+      tags:
+      - submit
+      summary: Submit feedback
+      description: "Through this endpoint you can submit feedback to a project with following data (all of the fields are optional):\n\n- Visitor:\nEmail of the person the feedback is from\n\n- Comment:\nA text value\n\n- Assignee:\nID of the assigned user (available through request to assignees endpoint) or email.\nIf not passed, the default assignee will be used. If null value is passed, the feedback will not be assigned to anyone.\n\n- Rating:\nIf the project is set up with NPS/5 star/5 smileys/thumbs up rating field, you can pass a rating field.\nIts value should be an integer between 1 and 10 for NPS, 1 and 5 for 5 star, 1 and 5 for 5 smileys, 1 and -1 for thumbs up/down.\n\n- Client:\nAn object, containing 3 fields:\n    - url - URL of the page, string\n    - screen_width - Screen width, as integer\n    - screen height - Screen height, as integer\n\n- Attachments:\nAn array of objects, each containing a file attachment, composed of 3 fields:\n    - content - content of the file encoded in base64\n    - filename - the name of the file\n    - mime_type - the mime type of the file\nMaximum size of each file is 20MiB.\n"
+      operationId: submitFeedback
+      parameters:
+      - $ref: '#/components/parameters/projectPathApiKey'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                api_key:
+                  type: string
+                visitor:
+                  type: string
+                comment:
+                  type: string
+                assignee:
+                  type: string
+                client:
+                  properties:
+                    url:
+                      type: string
+                    screen_width:
+                      type: integer
+                      format: int32
+                    screen_height:
+                      type: integer
+                      format: int32
+                  type: object
+                rating:
+                  type: integer
+                attachments:
+                  items:
+                    properties:
+                      content:
+                        type: string
+                      filename:
+                        type: string
+                      mime_type:
+                        type: string
+                    type: object
+                  type: array
+              type: object
+            example:
+              visitor: customer@example.com
+              comment: I like the new feature
+              rating: 9
+              client:
+                url: https://example.com
+                screen_width: 1920
+                screen_height: 1080
+        required: true
+      responses:
+        '201':
+          description: Returns the id of the created feedback
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    properties:
+                      feedback:
+                        properties:
+                          feedback_id:
+                            type: string
+                        type: object
+                    type: object
+                type: object
+                example:
+                  status: true
+                  data:
+                    feedback:
+                      feedback_id: caf0bb21-2047-4dd8-809c-9970b951bb33
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+      deprecated: false
+      security:
+      - bearerAuth: []
+      - {}
+components:
+  responses:
+    Error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Site does not exist
+              errortype: SITE_NOT_FOUND
+              errordata:
+                site_id: 50c4cdd6-4801-42b9-b785-b5cf90fcbb65
+    UnauthorizedError:
+      description: Authorization header missing or invalid
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Authorization failed
+              errortype: WRONG_AUTH
+              errordata: {}
+  parameters:
+    projectPathApiKey:
+      name: api_key
+      in: path
+      description: Project API key
+      required: true
+      deprecated: false
+      allowEmptyValue: false
+      explode: false
+      allowReserved: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: 'The bearer token is a JWT created by you and signed with the JWT secret provided in https://app.usersnap.com/#/settings/rest-api.
+
+
+        To create it, start with a default HS256 JWT (e.g. https://jwt.io/#debugger-io) and add "kid": "<JWT ID>" to the headers. Then sign it using the JWT secret.
+
+
+        Copy the resulting JWT (ey123123.ey123123.xyz) and always send it in the Authorization header as Bearer ey123123.ey123123.xyz.'
+      scheme: bearer
+      bearerFormat: JWT
+externalDocs:
+  description: Read our help pages for more.
+  url: https://help.usersnap.com/reference/platform-rest-api

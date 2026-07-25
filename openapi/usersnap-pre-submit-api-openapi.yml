@@ -1,0 +1,201 @@
+openapi: 3.0.0
+info:
+  title: Usersnap feedback pre_submit API
+  description: Make feedback matter! Now with a RESTful API
+  termsOfService: https://usersnap.com/terms-of-service
+  contact:
+    name: Usersnap Contact
+    url: https://usersnap.com/contact
+    email: contact@usersnap.com
+  version: '0.1'
+servers:
+- url: https://platform.usersnap.com/v0.1
+tags:
+- name: pre_submit
+  description: Available options for submission
+paths:
+  /projects/{api_key}/metrics:
+    get:
+      tags:
+      - pre_submit
+      summary: Get project metrics
+      description: List all the metrics that are available for this project
+      operationId: getProjectMetrics
+      parameters:
+      - $ref: '#/components/parameters/projectPathApiKey'
+      responses:
+        '200':
+          description: Returns the list of metrics
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    properties:
+                      metrics:
+                        items:
+                          properties:
+                            name:
+                              type: string
+                            help_text:
+                              type: string
+                            metric_type:
+                              type: string
+                          type: object
+                        type: array
+                    type: object
+                type: object
+                example:
+                  status: true
+                  data:
+                    metrics:
+                    - name: Client
+                      help_text: informations about the client.
+                      metric_type: CLIENT
+                    - name: Comment
+                      help_text: A comment field where users describe what they like or dislike on the page.
+                      metric_type: TEXT
+                    - name: Console log
+                      help_text: Data captured by the console recorder
+                      metric_type: CONSOLE_LOG
+                    - name: Custom Data
+                      help_text: Custom JSON data provided by customers in the widget.
+                      metric_type: JSON
+                    - name: Geo
+                      help_text: Geolocation (Country, City) of the client.
+                      metric_type: GEO
+                    - name: Screenshot
+                      help_text: A screenshot with annotations.
+                      metric_type: SCREENSHOT
+                    - name: State
+                      help_text: The state of this Feedback
+                      metric_type: ENUM
+                    - name: Text
+                      help_text: A text field with optional calculated sentiment.
+                      metric_type: TEXT
+                    - name: Visitor
+                      help_text: A visitor field for the email address
+                      metric_type: VISITOR
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+      deprecated: false
+      security:
+      - bearerAuth: []
+      - {}
+  /projects/{api_key}/assignees:
+    get:
+      tags:
+      - pre_submit
+      summary: Get project assignees
+      description: List all the assignees that are available for this project
+      operationId: getProjectAssignees
+      parameters:
+      - $ref: '#/components/parameters/projectPathApiKey'
+      responses:
+        '200':
+          description: Returns the list of users
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    properties:
+                      users:
+                        items:
+                          properties:
+                            user_id:
+                              type: string
+                            first_name:
+                              type: string
+                            last_name:
+                              type: string
+                            gravatar_url:
+                              type: string
+                          type: object
+                        type: array
+                    type: object
+                type: object
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+      deprecated: false
+      security:
+      - bearerAuth: []
+      - {}
+components:
+  responses:
+    Error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Site does not exist
+              errortype: SITE_NOT_FOUND
+              errordata:
+                site_id: 50c4cdd6-4801-42b9-b785-b5cf90fcbb65
+    UnauthorizedError:
+      description: Authorization header missing or invalid
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Authorization failed
+              errortype: WRONG_AUTH
+              errordata: {}
+  parameters:
+    projectPathApiKey:
+      name: api_key
+      in: path
+      description: Project API key
+      required: true
+      deprecated: false
+      allowEmptyValue: false
+      explode: false
+      allowReserved: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: 'The bearer token is a JWT created by you and signed with the JWT secret provided in https://app.usersnap.com/#/settings/rest-api.
+
+
+        To create it, start with a default HS256 JWT (e.g. https://jwt.io/#debugger-io) and add "kid": "<JWT ID>" to the headers. Then sign it using the JWT secret.
+
+
+        Copy the resulting JWT (ey123123.ey123123.xyz) and always send it in the Authorization header as Bearer ey123123.ey123123.xyz.'
+      scheme: bearer
+      bearerFormat: JWT
+externalDocs:
+  description: Read our help pages for more.
+  url: https://help.usersnap.com/reference/platform-rest-api

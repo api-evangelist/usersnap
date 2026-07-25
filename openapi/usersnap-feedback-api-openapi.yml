@@ -1,0 +1,570 @@
+openapi: 3.0.0
+info:
+  title: Usersnap feedback API
+  description: Make feedback matter! Now with a RESTful API
+  termsOfService: https://usersnap.com/terms-of-service
+  contact:
+    name: Usersnap Contact
+    url: https://usersnap.com/contact
+    email: contact@usersnap.com
+  version: '0.1'
+servers:
+- url: https://platform.usersnap.com/v0.1
+tags:
+- name: feedback
+  description: Feedback related endpoints
+paths:
+  /projects/{project_id}/feedbacks:
+    get:
+      tags:
+      - feedback
+      summary: Get all feedbacks
+      description: List all feedbacks of the given project
+      operationId: getProjectFeedbacks
+      parameters:
+      - $ref: '#/components/parameters/projectPathId'
+      responses:
+        '200':
+          $ref: '#/components/responses/ProjectFeedbackList'
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+      deprecated: false
+      security:
+      - bearerAuth: []
+  /projects/{project_id}/feedbacks/count:
+    get:
+      tags:
+      - feedback
+      summary: Get feedback count
+      description: Get the count of feedbacks of the given project
+      operationId: getProjectFeedbacksCount
+      parameters:
+      - $ref: '#/components/parameters/projectPathId'
+      responses:
+        '200':
+          description: Returns the count of feedbacks
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    properties:
+                      total_count:
+                        type: integer
+                        format: int32
+                    type: object
+                type: object
+                example:
+                  status: true
+                  data:
+                    total_count: 10
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+      deprecated: false
+      security:
+      - bearerAuth: []
+  /projects/{project_id}/feedbacks/filter:
+    post:
+      tags:
+      - feedback
+      summary: Get all feedbacks
+      description: List all feedbacks of the given project
+      operationId: filterProjectFeedbacks
+      parameters:
+      - $ref: '#/components/parameters/projectPathId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                query:
+                  items:
+                    properties:
+                      filter_type:
+                        type: string
+                        enum:
+                        - assignee
+                        - created_at
+                        - email
+                        - feedback_number
+                        - nps
+                        - one_to_five
+                        - state
+                        - thumb
+                      operator:
+                        type: string
+                        enum:
+                        - eq
+                        - neq
+                        - in
+                        - not_in
+                        - gt
+                        - gte
+                        - lt
+                        - lte
+                        - like
+                        - ilike
+                      value:
+                        type: string
+                    type: object
+                  type: array
+                order_by:
+                  properties:
+                    order_by_type:
+                      type: string
+                      enum:
+                      - created_at
+                      - rating
+                      - updated_at
+                      - likes
+                    direction:
+                      type: string
+                      enum:
+                      - asc
+                      - desc
+                  type: object
+              type: object
+              example:
+                order_by:
+                  direction: desc
+                  order_by_type: created_at
+                query:
+                - filter_type: state
+                  operator: eq
+                  value: done
+            examples:
+              closed_sorted_by_created_at_desc:
+                summary: Closed feedback items, sorted by date (newest first)
+                value:
+                  order_by:
+                    direction: desc
+                    order_by_type: created_at
+                  query:
+                  - filter_type: state
+                    operator: eq
+                    value: done
+              date_range_sorted_by_created_at_asc:
+                summary: Feedback items from a specific date range, sorted by date (oldest first)
+                value:
+                  order_by:
+                    direction: asc
+                    order_by_type: created_at
+                  query:
+                  - filter_type: created_at
+                    operator: gte
+                    value: '2023-03-22T00:00:00Z'
+                  - filter_type: created_at
+                    operator: lte
+                    value: '2023-03-25T00:00:00Z'
+              email_domain_sorted_by_updated_at_desc:
+                summary: Feedback items from a specific email address domain, sorted by modified date (newest first)
+                value:
+                  order_by:
+                    direction: desc
+                    order_by_type: updated_at
+                  query:
+                  - filter_type: email
+                    operator: like
+                    value: '%@usersnap.com'
+        required: true
+      responses:
+        '200':
+          $ref: '#/components/responses/ProjectFeedbackList'
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+      deprecated: false
+      security:
+      - bearerAuth: []
+  /projects/{project_id}/feedbacks/filter/count:
+    post:
+      tags:
+      - feedback
+      summary: Get feedback count
+      description: Get the count of feedbacks of the given project
+      operationId: filterProjectFeedbacksCount
+      parameters:
+      - $ref: '#/components/parameters/projectPathId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                query:
+                  items:
+                    properties:
+                      filter_type:
+                        type: string
+                        enum:
+                        - assignee
+                        - created_at
+                        - email
+                        - feedback_number
+                        - nps
+                        - one_to_five
+                        - state
+                        - thumb
+                      operator:
+                        type: string
+                        enum:
+                        - eq
+                        - neq
+                        - in
+                        - not_in
+                        - gt
+                        - gte
+                        - lt
+                        - lte
+                        - like
+                        - ilike
+                      value:
+                        type: string
+                    type: object
+                  type: array
+                order_by:
+                  properties:
+                    order_by_type:
+                      type: string
+                      enum:
+                      - created_at
+                      - rating
+                      - updated_at
+                      - likes
+                    direction:
+                      type: string
+                      enum:
+                      - asc
+                      - desc
+                  type: object
+              type: object
+              example:
+                order_by:
+                  direction: desc
+                  order_by_type: created_at
+                query:
+                - filter_type: state
+                  operator: eq
+                  value: done
+            examples:
+              closed_sorted_by_created_at_desc:
+                summary: Closed feedback items, sorted by date (newest first)
+                value:
+                  order_by:
+                    direction: desc
+                    order_by_type: created_at
+                  query:
+                  - filter_type: state
+                    operator: eq
+                    value: done
+              date_range_sorted_by_created_at_asc:
+                summary: Feedback items from a specific date range, sorted by date (oldest first)
+                value:
+                  order_by:
+                    direction: asc
+                    order_by_type: created_at
+                  query:
+                  - filter_type: created_at
+                    operator: gte
+                    value: '2023-03-22T00:00:00Z'
+                  - filter_type: created_at
+                    operator: lte
+                    value: '2023-03-25T00:00:00Z'
+              email_domain_sorted_by_updated_at_desc:
+                summary: Feedback items from a specific email address domain, sorted by modified date (newest first)
+                value:
+                  order_by:
+                    direction: desc
+                    order_by_type: updated_at
+                  query:
+                  - filter_type: email
+                    operator: like
+                    value: '%@usersnap.com'
+        required: true
+      responses:
+        '200':
+          description: Returns the count of feedbacks
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    properties:
+                      total_count:
+                        type: integer
+                        format: int32
+                    type: object
+                type: object
+                example:
+                  status: true
+                  data:
+                    total_count: 10
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+      deprecated: false
+      security:
+      - bearerAuth: []
+components:
+  responses:
+    Error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Site does not exist
+              errortype: SITE_NOT_FOUND
+              errordata:
+                site_id: 50c4cdd6-4801-42b9-b785-b5cf90fcbb65
+    ProjectFeedbackList:
+      description: List of feedbacks
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              data:
+                properties:
+                  has_more:
+                    type: boolean
+                  count:
+                    type: integer
+                    format: int32
+                  feedbacks:
+                    items:
+                      properties:
+                        feedback_id:
+                          type: string
+                        feedback_number:
+                          type: integer
+                          format: int32
+                        public_link:
+                          type: string
+                        project_id:
+                          type: string
+                        created_at:
+                          type: string
+                          format: date-time
+                        updated_at:
+                          type: string
+                          format: date-time
+                        status_type:
+                          type: string
+                        priority:
+                          type: string
+                        assignee_id:
+                          type: string
+                        is_demo:
+                          type: boolean
+                        email:
+                          type: string
+                        client:
+                          properties:
+                            url:
+                              type: string
+                            client_type:
+                              type: string
+                            city_name:
+                              type: string
+                            country_name:
+                              type: string
+                            screen_width:
+                              type: integer
+                              format: int32
+                            screen_height:
+                              type: integer
+                              format: int32
+                            browser_full_name:
+                              type: string
+                            browser_os:
+                              type: string
+                            browser_name:
+                              type: string
+                            browser_version:
+                              type: string
+                          type: object
+                        custom_data:
+                          type: object
+                        screenshot:
+                          properties:
+                            annotated_image_url:
+                              type: string
+                            comments:
+                              items:
+                                properties:
+                                  label:
+                                    type: string
+                                  comment:
+                                    type: string
+                                type: object
+                              type: array
+                          type: object
+                        screen_recording:
+                          properties:
+                            file_resource_url:
+                              type: string
+                            mime_type:
+                              type: string
+                          type: object
+                        ordered_inputs:
+                          items:
+                            properties:
+                              order:
+                                type: integer
+                                format: int32
+                              label:
+                                type: string
+                              boolean_value:
+                                type: boolean
+                              text_value:
+                                type: string
+                              value:
+                                type: string
+                            type: object
+                          type: array
+                        labels:
+                          items:
+                            properties:
+                              company_label_id:
+                                type: string
+                              identifier:
+                                type: string
+                              name:
+                                type: string
+                              color:
+                                type: string
+                            type: object
+                          type: array
+                      type: object
+                    type: array
+                  next:
+                    properties:
+                      query_string:
+                        type: string
+                      limit:
+                        type: integer
+                        format: int32
+                      after:
+                        type: string
+                    type: object
+                type: object
+            type: object
+            example:
+              status: true
+              data:
+                has_more: false
+                count: 10
+                feedbacks:
+                - feedback_id: f5150fc1-a7c9-4e33-8bd5-7a9cf3423e32
+                  feedback_number: 10
+                  public_link: https://app.usersnap.best/l/feedback/f5150fc1-a7c9-4e33-8bd5-7a9cf3423e32
+                  project_id: 03e7f4ec-7fa5-4783-b4b1-2da96ab2ba69
+                  created_at: '2022-08-04T10:22:34.127599Z'
+                  updated_at: '2022-08-04T10:22:34.153671Z'
+                  status_type: in_progress
+                  priority: high
+                  assignee_id: 66e13ff6-509b-4385-9ef7-660167e972ba
+                  is_demo: false
+                  email: someone@somewhere.com
+                  client:
+                    url: https://app.usersnap.best/widget-preview/?apikey=51934445-7273-4a87-bc7f-813fe88046bb
+                    client_type: browser
+                    city_name: Linz
+                    country_name: Austria
+                    screen_width: 1728
+                    screen_height: 1117
+                    browser_full_name: Firefox 103 (macOS Catalina)
+                    browser_os: Macintosh
+                    browser_name: Firefox
+                    browser_version: '103.0'
+                  custom_data:
+                    System: Staging
+                    Release Version: '0.2'
+                  screenshot:
+                    annotated_image_url: https://resources.usersnap.best/company/695f0023-36ff-42dd-85a7-13afcd6a239d/datapoint_screenshot/e257c490-69c1-4395-a81a-6be61d31812c-all_31f70d0f-94e0-412a-9cf9-6e9b439af0e0.png?etag=XT1oelEoouts6k6/YCVFpQ==
+                    comments: []
+                  screen_recording: null
+                  ordered_inputs:
+                  - order: 0
+                    label: Comment
+                    boolean_value: null
+                    text_value: '[Sample Feedback] The login button is not working'
+                    value: '[Sample Feedback] The login button is not working'
+                  labels:
+                  - company_label_id: 5392d1a5-925a-49a1-9168-d03cc60c7ec5
+                    identifier: bug
+                    name: Bug
+                    color: '#f71007'
+                next:
+                  query_string: limit=1&after=f5150fc1-a7c9-4e33-8bd5-7a9cf3423e32
+                  limit: 1
+                  after: f5150fc1-a7c9-4e33-8bd5-7a9cf3423e32
+    UnauthorizedError:
+      description: Authorization header missing or invalid
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Authorization failed
+              errortype: WRONG_AUTH
+              errordata: {}
+  parameters:
+    projectPathId:
+      name: project_id
+      in: path
+      description: Project ID
+      required: true
+      deprecated: false
+      allowEmptyValue: false
+      explode: false
+      allowReserved: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: 'The bearer token is a JWT created by you and signed with the JWT secret provided in https://app.usersnap.com/#/settings/rest-api.
+
+
+        To create it, start with a default HS256 JWT (e.g. https://jwt.io/#debugger-io) and add "kid": "<JWT ID>" to the headers. Then sign it using the JWT secret.
+
+
+        Copy the resulting JWT (ey123123.ey123123.xyz) and always send it in the Authorization header as Bearer ey123123.ey123123.xyz.'
+      scheme: bearer
+      bearerFormat: JWT
+externalDocs:
+  description: Read our help pages for more.
+  url: https://help.usersnap.com/reference/platform-rest-api

@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: usersnap.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Oct  2 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: help.usersnap.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  3 22:51:47 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: platform.usersnap.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 24 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: usersnap.com
+  dnssec: false
+  caa:
+  - 0 issue "amazon.com"
+  - 0 issue "letsencrypt.org"
+  - 0 issue "pki.goog; cansignhttpexchanges=yes"
+  - 0 issuewild "amazon.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

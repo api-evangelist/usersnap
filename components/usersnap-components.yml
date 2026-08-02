@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://help.usersnap.com/docs/feedback-widget
+notes: >-
+  Usersnap's core product surface is client-side embeddable feedback UI.
+  Families and loaders documented across the help center (see llms/usersnap-llms.txt
+  for the full page index).
+loaders:
+  - name: Usersnap global snippet
+    kind: script-tag
+    docs: https://help.usersnap.com/docs/usersnap-global-snippet
+  - name: "@usersnap/browser"
+    kind: npm-package
+    install: npm install @usersnap/browser
+    api: loadSpace(spaceApiKey).then(api => api.init())
+    docs: https://help.usersnap.com/docs/installation-using-npm
+components:
+  - family: Website widget (button, pop-up)
+    description: Feedback button / auto pop-up widget with screenshot annotation and screen recording; programmable open/close via the widget JavaScript API.
+    docs: https://help.usersnap.com/docs/website-widget-api-examples
+  - family: Website inline form
+    description: Feedback form embedded into the page layout.
+    docs: https://help.usersnap.com/docs/embed-the-widget-into-a-webpage
+  - family: Email survey
+    docs: https://help.usersnap.com/docs/email-survey
+  - family: Mobile app form
+    description: Native mobile feedback form (iOS/Android SDK build repos published on GitHub).
+    docs: https://help.usersnap.com/docs/collecting-customer-feedback-on-mobile-apps-beta
+  - family: Shareable link (self-opening widget)
+    docs: https://help.usersnap.com/docs/full-page-collector
+  - family: Browser extensions
+    docs: https://help.usersnap.com/docs/track-browser-extensions
+  - family: Feedback menu
+    description: Hosts multiple feedback options in one menu.
+    docs: https://help.usersnap.com/docs/setting-up-a-menu-with-multiple-feedback-options
+  - family: Announcements / changelog widget
+    description: In-product announcements and changelog communication to end users.
+    docs: https://help.usersnap.com/docs/announcementschangelog
+  - family: Public board / portal
+    description: Hosted public feedback board for customers.
+    docs: https://help.usersnap.com/docs/public-portal-for-your-guest-users
+installation_targets: [HTML, Google Tag Manager, WordPress, NPM/SPA, React, Blazor, AngularJS, Shopify, Cvent, TYPO3]

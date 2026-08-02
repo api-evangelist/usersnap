@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: searched
+hosts:
+  - host: https://usersnap.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+  - host: https://platform.usersnap.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+  - host: https://help.usersnap.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - path: /llms.txt
+        status: 200
+        file: ../llms/usersnap-llms.txt
+  - host: https://mcp.usersnap.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - path: /.well-known/oauth-authorization-server
+        status: 302
+        redirect: https://id.usersnap.com/.well-known/oauth-authorization-server
+        file: usersnap-oauth-authorization-server.json
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: usersnap-oauth-protected-resource.json
+  - host: https://id.usersnap.com
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: usersnap-oauth-authorization-server.json
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/security.txt, status: 404}

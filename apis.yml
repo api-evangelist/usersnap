@@ -1,22 +1,186 @@
 aid: usersnap
 name: Usersnap
-description: Usersnap is a company surfaced as a portfolio company of speedinvest and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Usersnap is a user feedback platform from Perg/Linz, Austria that lets
+  product, development, customer success, and marketing teams capture,
+  organize, and act on user feedback with embeddable widgets for screenshots,
+  screen recordings, ratings, and surveys. Beyond the widgets, Usersnap ships
+  a plan-gated platform REST API (JWT bearer auth) for submitting and
+  querying feedback, HMAC-signed webhooks, an official npm browser package,
+  and a hosted MCP server (mcp.usersnap.com) secured with OAuth 2.1 + PKCE so
+  AI assistants can query feedback and create opportunities.
 url: https://raw.githubusercontent.com/api-evangelist/usersnap/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - speedinvest
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: active-api-provider
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://github.com/usersnap.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Feedback
+- Bug Tracking
+- Customer Experience
+- Product Management
+- Surveys
+- SaaS
+apis:
+- aid: usersnap:usersnap-feedback-api
+  name: Usersnap feedback API
+  description: Feedback related endpoints
+  humanURL: https://help.usersnap.com/reference/rest-api
+  baseURL: https://platform.usersnap.com/v0.1
+  tags:
+  - feedback
+  properties:
+  - type: OpenAPI
+    url: openapi/usersnap-feedback-api-openapi.yml
+  - type: Documentation
+    url: https://help.usersnap.com/reference/rest-api
+  - type: SwaggerHub
+    url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
+- aid: usersnap:usersnap-pre-submit-api
+  name: Usersnap pre_submit API
+  description: Available options for submission
+  humanURL: https://help.usersnap.com/reference/rest-api
+  baseURL: https://platform.usersnap.com/v0.1
+  tags:
+  - pre_submit
+  properties:
+  - type: OpenAPI
+    url: openapi/usersnap-pre-submit-api-openapi.yml
+  - type: Documentation
+    url: https://help.usersnap.com/reference/rest-api
+  - type: SwaggerHub
+    url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
+- aid: usersnap:usersnap-project-api
+  name: Usersnap project API
+  description: Project related endpoints
+  humanURL: https://help.usersnap.com/reference/rest-api
+  baseURL: https://platform.usersnap.com/v0.1
+  tags:
+  - project
+  properties:
+  - type: OpenAPI
+    url: openapi/usersnap-project-api-openapi.yml
+  - type: Documentation
+    url: https://help.usersnap.com/reference/rest-api
+  - type: SwaggerHub
+    url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
+- aid: usersnap:usersnap-submit-api
+  name: Usersnap submit API
+  description: Submit feedback
+  humanURL: https://help.usersnap.com/reference/rest-api
+  baseURL: https://platform.usersnap.com/v0.1
+  tags:
+  - submit
+  properties:
+  - type: OpenAPI
+    url: openapi/usersnap-submit-api-openapi.yml
+  - type: Documentation
+    url: https://help.usersnap.com/reference/rest-api
+  - type: SwaggerHub
+    url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
+common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/usersnap/overview
+- type: AgenticAccess
+  url: agentic-access/usersnap-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/usersnap-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/usersnap-domain-security.yml
+- type: Website
+  url: https://usersnap.com
+- type: DeveloperPortal
+  url: https://help.usersnap.com/
+- type: Documentation
+  url: https://help.usersnap.com/docs/getting-started-with-usersnap
+- type: APIReference
+  url: https://help.usersnap.com/reference/rest-api
+- type: GettingStarted
+  url: https://help.usersnap.com/docs/getting-started-with-usersnap
+- type: Support
+  url: https://usersnap.com/contact
+- type: Blog
+  url: https://usersnap.com/blog
+- type: Pricing
+  url: https://usersnap.com/pricing
+- type: StatusPage
+  url: https://status.usersnap.com/
+- type: GitHubOrganization
+  url: https://github.com/usersnap
+- type: TermsOfService
+  url: https://usersnap.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://usersnap.com/privacy-policy
+- type: SignUp
+  url: https://usersnap.com/signup
+- type: Login
+  url: https://app.usersnap.com/
+- type: Security
+  url: https://usersnap.com/security
+- type: TrustCenter
+  url: security/usersnap-trust-center.yml
+- type: Compliance
+  url: https://usersnap.com/security
+- type: ChangeLog
+  url: https://portal.usersnap.com/changelog/2bdcb520-7c12-4691-b9fe-94784b8bd8d6
+- type: ChangeLog
+  url: changelog/usersnap-changelog.yml
+- type: LLMsTxt
+  url: llms/usersnap-llms.txt
+- type: MCPServer
+  url: mcp/usersnap-mcp.yml
+- type: Packages
+  url: packages/usersnap-packages.yml
+- type: SDKs
+  url: packages/usersnap-packages.yml
+- type: WellKnown
+  url: well-known/usersnap-well-known.yml
+- type: Authentication
+  url: authentication/usersnap-authentication.yml
+- type: OAuthScopes
+  url: scopes/usersnap-scopes.yml
+- type: ErrorCatalog
+  url: errors/usersnap-problem-types.yml
+- type: Conventions
+  url: conventions/usersnap-conventions.yml
+- type: Conformance
+  url: conformance/usersnap-conformance.yml
+- type: Lifecycle
+  url: lifecycle/usersnap-lifecycle.yml
+- type: DataModel
+  url: data-model/usersnap-data-model.yml
+- type: Components
+  url: components/usersnap-components.yml
+- type: Webhooks
+  url: asyncapi/usersnap-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 25
+  pass: local-v1

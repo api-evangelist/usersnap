@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/usersnap-api-openapi-original.json
+standards:
+  - id: openapi-3.0
+    conforms: true
+    evidence: Published OpenAPI 3.0.0 on SwaggerHub (usersnap6/usersnap-api/0.1).
+  - id: jwt-rfc7519
+    conforms: true
+    evidence: bearerAuth securityScheme is http bearer with bearerFormat JWT (self-signed HS256 with kid header).
+  - id: oauth2
+    conforms: false
+    evidence: No oauth2 securitySchemes; auth is a shared-secret-signed JWT bearer token.
+  - id: oidc
+    conforms: false
+    evidence: No openIdConnect scheme in the API; SSO (SAML-based) is a dashboard login feature, not an API auth method.
+  - id: cursor-pagination
+    conforms: true
+    evidence: limit/after/before cursor pagination with has_more/next/previous documented at help.usersnap.com/reference/rest-api.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a custom {status, msg, errortype, errordata} envelope, not application/problem+json.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key mechanism documented.
+  - id: json-api
+    conforms: false
+    evidence: Responses use a custom {status, data} envelope, not JSON:API.

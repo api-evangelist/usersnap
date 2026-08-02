@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: https://registry.npmjs.org/@usersnap/browser
+packages:
+  - language: javascript
+    registry: npm
+    name: "@usersnap/browser"
+    url: https://www.npmjs.com/package/@usersnap/browser
+    install: npm install @usersnap/browser
+    version: 1.0.2
+    license: MIT
+    official: true
+    docs: https://help.usersnap.com/docs/installation-using-npm
+    notes: >-
+      Official browser loader for the Usersnap widget in SPA projects
+      (loadSpace(spaceApiKey) API); recommended install path in the docs.
+      Last published 2025-04-01.
+  - language: kotlin
+    registry: github
+    name: usersnap/android-sdk-build-public
+    url: https://github.com/usersnap/android-sdk-build-public
+    official: true
+    notes: Public build repository for the Usersnap Android SDK (mobile app feedback form).
+  - language: swift
+    registry: github
+    name: usersnap/ios-sdk-build-public
+    url: https://github.com/usersnap/ios-sdk-build-public
+    official: true
+    notes: Public build repository for the Usersnap iOS SDK (mobile app feedback form).
+  - language: php
+    registry: github
+    name: usersnap/typo3-plugin
+    url: https://github.com/usersnap/typo3-plugin
+    official: true
+    notes: TYPO3 CMS plugin for Usersnap.
+examples_repo:
+  url: https://github.com/usersnap/public
+  notes: Official public examples repo (framework installs, expressjs-webhook-integration signature verification).
+registries_checked:
+  - registry: npm
+    result: "@usersnap/browser (official)"
+  - registry: pypi
+    result: none (HTTP 404 for usersnap)
+  - registry: rubygems
+    result: none (HTTP 404 for usersnap)
+  - registry: nuget
+    result: none (0 hits)
+  - registry: packagist
+    result: third-party only (e-conomix/magento2-usersnap, wieni/wmusersnap)

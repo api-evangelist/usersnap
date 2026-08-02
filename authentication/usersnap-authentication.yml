@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/usersnap-api-openapi-original.json
+docs: https://help.usersnap.com/reference/rest-api
+notes: >-
+  The Usersnap REST API is a gated feature (available on specific plans; enable
+  under Settings > Rest API in app.usersnap.com). Usersnap generates a shared JWT
+  secret plus a JWT ID; the customer self-signs HS256 JWTs (header must include
+  "kid": "<JWT ID>"; HS512 is explicitly not supported) and sends them as a
+  Bearer token in the Authorization header. The submit and pre-submit endpoints
+  (project api_key in path) also accept unauthenticated calls per the OpenAPI
+  security declaration ({} alternative).
+summary:
+  types: [http]
+  http_schemes: [bearer]
+  bearer_format: JWT
+  jwt:
+    algorithm: HS256
+    header_kid: JWT ID generated in the Usersnap dashboard
+    secret: shared secret generated at https://app.usersnap.com/#/settings/rest-api
+  gated_feature: true
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+    description: >-
+      The bearer token is a JWT created by you and signed with the JWT secret
+      provided in https://app.usersnap.com/#/settings/rest-api. Start with a
+      default HS256 JWT and add "kid": "<JWT ID>" to the headers, then sign it
+      with the JWT secret and send it as Authorization: Bearer <jwt>.
+    sources: [openapi/usersnap-api-openapi-original.json]

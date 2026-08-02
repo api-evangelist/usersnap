@@ -1,0 +1,20 @@
+{
+  "provider": "usersnap",
+  "sources": [
+    "usersnap-feedback-api-openapi.yml",
+    "usersnap-pre-submit-api-openapi.yml",
+    "usersnap-project-api-openapi.yml",
+    "usersnap-submit-api-openapi.yml"
+  ],
+  "outputs": [
+    "usersnap-feedback-api-openapi.yml",
+    "usersnap-pre-submit-api-openapi.yml",
+    "usersnap-project-api-openapi.yml",
+    "usersnap-submit-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

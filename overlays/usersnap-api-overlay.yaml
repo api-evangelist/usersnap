@@ -1,0 +1,35 @@
+# generated: 2026-07-21 | method: generated | source: openapi/usersnap-api-openapi-original.json
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Usersnap API
+  version: 1.0.0
+extends: openapi/usersnap-api-openapi-original.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist:
+        provider: usersnap
+        enriched: '2026-07-21'
+        artifacts:
+          authentication: authentication/usersnap-authentication.yml
+          conventions: conventions/usersnap-conventions.yml
+          errors: errors/usersnap-problem-types.yml
+          data-model: data-model/usersnap-data-model.yml
+  - target: $.info
+    update:
+      x-audience: external-partner
+      x-gated: true
+      x-gated-note: REST API access is plan-gated; enable under Settings > Rest API.
+  - target: $.paths['/projects/{project_id}/feedbacks'].get
+    update:
+      x-pagination:
+        style: cursor
+        parameters: [limit, after, before]
+        response_fields: [has_more, count, next, previous]
+  - target: $.paths['/projects/{project_id}/feedbacks/filter'].post
+    update:
+      x-notes: A JSON request body is required even when empty ({}).
+  - target: $.components.securitySchemes.bearerAuth
+    update:
+      x-jwt-algorithm: HS256
+      x-jwt-kid-required: true

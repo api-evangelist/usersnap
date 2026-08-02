@@ -1,0 +1,452 @@
+{
+  "info": {
+    "_postman_id": "1ee97a82-06d0-41ee-994a-98037eb769e1",
+    "name": "Usersnap feedback pre_submit API",
+    "description": "Make feedback matter! Now with a RESTful API\n\nContact Support:\n Name: Usersnap Contact\n Email: contact@usersnap.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T03:25:59.000Z",
+    "updatedAt": "2026-07-28T03:25:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1ee97a82-06d0-41ee-994a-98037eb769e1"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{api_key}",
+          "item": [
+            {
+              "name": "metrics",
+              "item": [
+                {
+                  "name": "Get project metrics",
+                  "id": "9bbfa74e-378e-4e2b-a694-4ed95fdc0df0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:api_key/metrics",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":api_key",
+                        "metrics"
+                      ],
+                      "variable": [
+                        {
+                          "id": "833e84b6-44bc-4aa1-8b8e-08710565a0bd",
+                          "key": "api_key",
+                          "value": "<string>",
+                          "description": "(Required) Project API key"
+                        }
+                      ]
+                    },
+                    "description": "List all the metrics that are available for this project"
+                  },
+                  "response": [
+                    {
+                      "id": "92d4f004-957a-4870-8c97-e2cd0b09b524",
+                      "name": "Returns the list of metrics",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/metrics",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "metrics"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"data\": {\n    \"metrics\": [\n      {\n        \"name\": \"<string>\",\n        \"help_text\": \"<string>\",\n        \"metric_type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"help_text\": \"<string>\",\n        \"metric_type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                      "createdAt": "2026-07-28T03:25:59.000Z",
+                      "updatedAt": "2026-07-28T03:25:59.000Z",
+                      "uid": "35240-92d4f004-957a-4870-8c97-e2cd0b09b524"
+                    },
+                    {
+                      "id": "10590bc1-7e7e-4a9b-a378-e20ca527d880",
+                      "name": "Error response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/metrics",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "metrics"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"msg\": \"<string>\",\n  \"errortype\": \"<string>\",\n  \"errordata\": {}\n}",
+                      "createdAt": "2026-07-28T03:25:59.000Z",
+                      "updatedAt": "2026-07-28T03:25:59.000Z",
+                      "uid": "35240-10590bc1-7e7e-4a9b-a378-e20ca527d880"
+                    },
+                    {
+                      "id": "3c4380b5-f6ed-43c6-862e-f3ee17cd8877",
+                      "name": "Authorization header missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/metrics",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "metrics"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"msg\": \"<string>\",\n  \"errortype\": \"<string>\",\n  \"errordata\": {}\n}",
+                      "createdAt": "2026-07-28T03:25:59.000Z",
+                      "updatedAt": "2026-07-28T03:25:59.000Z",
+                      "uid": "35240-3c4380b5-f6ed-43c6-862e-f3ee17cd8877"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:25:59.000Z",
+                  "updatedAt": "2026-07-28T03:25:59.000Z",
+                  "uid": "35240-9bbfa74e-378e-4e2b-a694-4ed95fdc0df0"
+                }
+              ],
+              "id": "9bf3f7e7-4642-48fd-b928-8c4d9f6a9b69",
+              "createdAt": "2026-07-28T03:25:59.000Z",
+              "updatedAt": "2026-07-28T03:25:59.000Z",
+              "uid": "35240-9bf3f7e7-4642-48fd-b928-8c4d9f6a9b69"
+            },
+            {
+              "name": "assignees",
+              "item": [
+                {
+                  "name": "Get project assignees",
+                  "id": "f6a74076-d4ce-497a-afa9-b940a1d0e576",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:api_key/assignees",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":api_key",
+                        "assignees"
+                      ],
+                      "variable": [
+                        {
+                          "id": "785293a4-6ea6-4f33-a64a-39da4cdf7f0f",
+                          "key": "api_key",
+                          "value": "<string>",
+                          "description": "(Required) Project API key"
+                        }
+                      ]
+                    },
+                    "description": "List all the assignees that are available for this project"
+                  },
+                  "response": [
+                    {
+                      "id": "57203f52-9eeb-4633-bdef-fffc2aa690c7",
+                      "name": "Returns the list of users",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/assignees",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "assignees"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"data\": {\n    \"users\": [\n      {\n        \"user_id\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"gravatar_url\": \"<string>\"\n      },\n      {\n        \"user_id\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"gravatar_url\": \"<string>\"\n      }\n    ]\n  }\n}",
+                      "createdAt": "2026-07-28T03:25:59.000Z",
+                      "updatedAt": "2026-07-28T03:25:59.000Z",
+                      "uid": "35240-57203f52-9eeb-4633-bdef-fffc2aa690c7"
+                    },
+                    {
+                      "id": "d4fd519a-5c08-458a-abbb-cc572257485f",
+                      "name": "Error response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/assignees",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "assignees"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"msg\": \"<string>\",\n  \"errortype\": \"<string>\",\n  \"errordata\": {}\n}",
+                      "createdAt": "2026-07-28T03:25:59.000Z",
+                      "updatedAt": "2026-07-28T03:25:59.000Z",
+                      "uid": "35240-d4fd519a-5c08-458a-abbb-cc572257485f"
+                    },
+                    {
+                      "id": "a6f75a30-963e-4980-b714-60817a445136",
+                      "name": "Authorization header missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/assignees",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "assignees"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"msg\": \"<string>\",\n  \"errortype\": \"<string>\",\n  \"errordata\": {}\n}",
+                      "createdAt": "2026-07-28T03:25:59.000Z",
+                      "updatedAt": "2026-07-28T03:25:59.000Z",
+                      "uid": "35240-a6f75a30-963e-4980-b714-60817a445136"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:25:59.000Z",
+                  "updatedAt": "2026-07-28T03:25:59.000Z",
+                  "uid": "35240-f6a74076-d4ce-497a-afa9-b940a1d0e576"
+                }
+              ],
+              "id": "14488d64-f178-4b81-8ee9-7756fd40e079",
+              "createdAt": "2026-07-28T03:25:59.000Z",
+              "updatedAt": "2026-07-28T03:25:59.000Z",
+              "uid": "35240-14488d64-f178-4b81-8ee9-7756fd40e079"
+            }
+          ],
+          "id": "62b2f414-4c78-4c4f-ae31-3bae93bb6d91",
+          "createdAt": "2026-07-28T03:25:59.000Z",
+          "updatedAt": "2026-07-28T03:25:59.000Z",
+          "uid": "35240-62b2f414-4c78-4c4f-ae31-3bae93bb6d91"
+        }
+      ],
+      "id": "71bd8b97-6bb3-47b3-83d7-6bb2ba5fbf54",
+      "createdAt": "2026-07-28T03:25:59.000Z",
+      "updatedAt": "2026-07-28T03:25:59.000Z",
+      "uid": "35240-71bd8b97-6bb3-47b3-83d7-6bb2ba5fbf54"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://platform.usersnap.com/v0.1"
+    }
+  ]
+}

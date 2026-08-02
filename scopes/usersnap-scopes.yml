@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://id.usersnap.com/.well-known/oauth-authorization-server
+docs: https://help.usersnap.com/docs/mcp-connector
+notes: >-
+  OAuth scopes published in Usersnap's RFC 8414 authorization-server metadata
+  (issuer id.usersnap.com), used by the hosted MCP connector
+  (mcp.usersnap.com/mcp) via OAuth 2.1 authorization_code + PKCE (S256).
+  The platform REST API itself uses self-signed JWT bearer auth, not OAuth
+  (see authentication/usersnap-authentication.yml).
+schemes:
+  - name: usersnap-oauth
+    issuer: https://id.usersnap.com
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://id.usersnap.com/auth/oauth2/authorize
+        tokenUrl: https://id.usersnap.com/auth/oauth2/token
+        refresh_token: true
+        pkce: S256
+    revocationUrl: https://id.usersnap.com/auth/oauth2/revoke
+    registrationUrl: https://id.usersnap.com/auth/oauth2/register
+    token_endpoint_auth_methods: [client_secret_basic, client_secret_post, none]
+scopes:
+  - scope: read:feedback
+    description: Read access to feedback data (as scoped to the authorizing user's permissions).
+    flows: [authorizationCode]
+    sources: [https://id.usersnap.com/.well-known/oauth-authorization-server]
+  - scope: write:opportunity
+    description: Create Opportunities and link feedback; cannot edit or delete existing feedback.
+    flows: [authorizationCode]
+    sources: [https://id.usersnap.com/.well-known/oauth-authorization-server]

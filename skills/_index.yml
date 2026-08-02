@@ -1,0 +1,11 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: usersnap-submit-feedback.md
+    name: Submit user feedback to a Usersnap project
+    api: openapi/usersnap-api-openapi-original.json
+    operations: [getProjectAssignees, getProjectMetrics, submitFeedback]
+  - file: usersnap-pull-and-filter-feedback.md
+    name: Pull and filter feedback from Usersnap
+    api: openapi/usersnap-api-openapi-original.json
+    operations: [getProjects, getProjectFeedbacks, getProjectFeedbacksCount, filterProjectFeedbacks, filterProjectFeedbacksCount]

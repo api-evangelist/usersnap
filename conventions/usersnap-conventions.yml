@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: searched
+source: https://help.usersnap.com/reference/rest-api
+notes: >-
+  Cross-cutting request/response semantics of the Usersnap platform REST API
+  (v0.1), from the REST API reference plus the OpenAPI on SwaggerHub
+  (usersnap6/usersnap-api/0.1).
+authentication:
+  style: bearer-jwt
+  detail: Self-signed HS256 JWT (kid header = JWT ID) signed with a shared secret; sent as Authorization Bearer.
+  artifact: authentication/usersnap-authentication.yml
+idempotency:
+  supported: false
+  detail: No idempotency-key header or replay-safety contract is documented for the REST API.
+pagination:
+  style: cursor
+  parameters:
+    - name: limit
+      detail: Items per page, default 10, range 1-100.
+    - name: after
+      detail: Cursor; feedback_id of the last item on the current page.
+    - name: before
+      detail: Cursor; feedback_id of the first item on the current page.
+  response_fields:
+    - has_more
+    - count
+    - next
+    - previous
+  default_sort: Feedback.updated_at descending
+filtering:
+  style: structured-query-body
+  detail: >-
+    POST /projects/{project_id}/feedbacks/filter accepts a JSON body with
+    query[] (filter_type, operator, value) and order_by (order_by_type,
+    direction). filter_type enum: assignee, created_at, email, feedback_number,
+    nps, one_to_five, state, thumb. operator enum: eq, neq, in, not_in, gt,
+    gte, lt, lte, like, ilike. A JSON body is required even when empty ({}).
+versioning:
+  scheme: uri-path
+  current: v0.1
+  detail: Version prefix in the base URL (https://platform.usersnap.com/v0.1).
+error_envelope:
+  shape: {status: boolean, msg: string, errortype: string, errordata: object}
+  artifact: errors/usersnap-problem-types.yml
+response_envelope:
+  shape: {status: boolean, data: object}
+  detail: Successful responses wrap payloads in a data object with a status boolean.
+request_tracing:
+  documented: false
+rate_limits:
+  documented: false
+  detail: No rate-limit headers or quotas are documented in the REST API reference.
+limits:
+  - Attachment uploads via submitFeedback are limited to 20MiB per file.

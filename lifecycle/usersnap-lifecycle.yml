@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+source: https://status.usersnap.com/
+versioning:
+  scheme: uri-path
+  current: v0.1
+  detail: Version prefix in the platform API base URL (https://platform.usersnap.com/v0.1); the OpenAPI info.version is 0.1.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No public deprecation policy or Sunset/Deprecation header support documented.
+sla:
+  url: null
+  detail: No public SLA page found; the Enterprise plan advertises dedicated support terms.
+status_page: https://status.usersnap.com/
+status_page_probe:
+  status: 200
+  checked: '2026-07-21'
+deprecated_operations: []

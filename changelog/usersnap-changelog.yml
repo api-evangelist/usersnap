@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+source: https://portal.usersnap.com/changelog/2bdcb520-7c12-4691-b9fe-94784b8bd8d6
+notes: >-
+  Usersnap publishes its product changelog through its own portal/changelog
+  widget (dogfooding the Announcements/changelog feature), linked from the
+  usersnap.com site menu ("Changelog - view the recent product updates").
+  Entries render client-side in the portal SPA, so no structured recent
+  entries are mirrored here; the live portal is the source of truth.
+  The platform REST API itself is versioned v0.1 (uri-path) with no separate
+  dated API changelog.
+channels:
+  - name: Product changelog portal
+    url: https://portal.usersnap.com/changelog/2bdcb520-7c12-4691-b9fe-94784b8bd8d6
+  - name: Changelog feature page
+    url: https://usersnap.com/features/product-changelog-software
+versioning:
+  api_scheme: uri-path
+  api_current: v0.1
+entries: []

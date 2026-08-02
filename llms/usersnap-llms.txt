@@ -1,0 +1,147 @@
+# Usersnap Help Center Documentation
+
+> Usersnap helps your business with its versatile feedback platform to build better, more successful products and services with the help of user feedback. Getting started with Usersnap is easy.
+
+## Guides
+- [Usersnap](https://help.usersnap.com/docs/feedback-widget.md): The #1 user feedback platform - Usersnap helps you to capture, organize, respond, and scale user feedback all in one place.
+- [First steps with Usersnap](https://help.usersnap.com/docs/getting-started-with-usersnap.md)
+- [Test your widget on a demo page](https://help.usersnap.com/docs/how-to-test-your-widget-on-a-demo-page.md): Preview your widget
+- [I'm lost. Can somebody help me?](https://help.usersnap.com/docs/im-lost-can-somebody-help-me.md)
+- [Best practices for collecting feedback](https://help.usersnap.com/docs/how-to-increase-your-feedback-traffic.md): A guide to receiving more valuable insights from your customers
+- [Usersnap for Product managers](https://help.usersnap.com/docs/copy-of-usersnap-for-product-managers.md): Turn feedback into product impact across the entire PDLC
+- [Usersnap for Dev Teams: streamline bug resolution, QA and release validation](https://help.usersnap.com/docs/copy-of-usersnap-for-dev-teams.md)
+- [Usersnap for CS Teams: turn customer conversations into product insights and boost retention](https://help.usersnap.com/docs/copy-of-usersnap-for-cs-teams.md)
+- [Usersnap for Marketing teams](https://help.usersnap.com/docs/usersnap-for-marketing-teams.md)
+- [Usersnap for Enterprise customers](https://help.usersnap.com/docs/usersnap-for-enterprise-customers.md): The Enterprise plan is built for large organizations, combining enterprise-grade security, privacy, opt-in AI governance, flexible commercial terms, and dedicated support.
+- [Usersnap global snippet](https://help.usersnap.com/docs/usersnap-global-snippet.md)
+- [Installation via HTML](https://help.usersnap.com/docs/installation-via-html.md)
+- [Installation on Google Tag Manager](https://help.usersnap.com/docs/installation-on-google-tag-manager.md)
+- [Installation on Wordpress](https://help.usersnap.com/docs/installation-on-wordpress-1.md)
+- [Installation using NPM](https://help.usersnap.com/docs/installation-using-npm.md)
+- [Installation on a Single Page Application (SPA)](https://help.usersnap.com/docs/installation-on-a-single-page-application-spa.md)
+- [Installation on a React App](https://help.usersnap.com/docs/installation-on-a-react-app.md)
+- [Installation on Blazor](https://help.usersnap.com/docs/installation-on-blazor.md)
+- [Installation on AngularJS](https://help.usersnap.com/docs/installation-on-angularjs.md)
+- [Installation on Shopify](https://help.usersnap.com/docs/installation-on-shopify-ecommerce-store.md)
+- [Change default settings](https://help.usersnap.com/docs/change-default-settings.md)
+- [Installation on Cvent](https://help.usersnap.com/docs/installation-on-cvent.md)
+- [User identification](https://help.usersnap.com/docs/user-identification.md)
+- [User events](https://help.usersnap.com/docs/user-events.md)
+- [Custom data](https://help.usersnap.com/docs/custom-data.md)
+- [Channels data ingestion](https://help.usersnap.com/docs/channels-data-ingestion.md)
+- [Zoom integration to import calls](https://help.usersnap.com/docs/zoom-integration-to-import-calls.md)
+- [ServiceNow integration to report incidents](https://help.usersnap.com/docs/servicenow-integration-to-report-incidents.md)
+- [Intercom integration to import conversations](https://help.usersnap.com/docs/intercom-integration-to-import-conversations.md)
+- [Ways to collect feedback items](https://help.usersnap.com/docs/how-would-you-like-the-feedback-items-be-collected.md)
+- [1.1 Website widget (button, pop-up): Target](https://help.usersnap.com/docs/targeting.md): Configuration of the widget visibility (via button or pop-up)
+- [What can you do with the space (global) code snippet?](https://help.usersnap.com/docs/what-can-you-do.md)
+- [Targeting: Display the feedback button & widgets](https://help.usersnap.com/docs/display-the-feedback-button-widgets.md): Install the Usersnap Widget on Your Site or on Your App
+- [Target: a lively example](https://help.usersnap.com/docs/target-examples.md): This page will show you how to work with display path rules the best.
+- [Works on mobile devices](https://help.usersnap.com/docs/usersnap-widgets-also-work-on-mobile-devices.md)
+- [Open the widget with your own feedback button](https://help.usersnap.com/docs/open-the-widget-with-your-own-feedback-button.md)
+- [Custom behavior via API](https://help.usersnap.com/docs/website-widget-api-examples.md): for buttons and auto pop-ups
+- [2. Website inline form](https://help.usersnap.com/docs/embed-the-widget-into-a-webpage.md): Embed the widget into a webpage
+- [Website inline form: API examples](https://help.usersnap.com/docs/website-embed-api-examples.md)
+- [Installing Usersnap using NPM (Inline Form)](https://help.usersnap.com/docs/installing-usersnap-using-npm-inline-form.md)
+- [3. Email survey](https://help.usersnap.com/docs/email-survey.md)
+- [4. Mobile app form](https://help.usersnap.com/docs/collecting-customer-feedback-on-mobile-apps-beta.md): Native mobile app customer feedback
+- [5. Shareable link: Publish](https://help.usersnap.com/docs/full-page-collector.md): How to send a link to a self-opening widget via email or any other application
+- [6. Browser extensions](https://help.usersnap.com/docs/track-browser-extensions.md)
+- [7. Channels Co-pilot](https://help.usersnap.com/docs/7-channels-co-pilot.md): Send insights from calls, interviews, support tool and more to Usersnap
+- [Feedback menu: host multiple feedback options in one menu](https://help.usersnap.com/docs/setting-up-a-menu-with-multiple-feedback-options.md)
+- [Announcements/changelog](https://help.usersnap.com/docs/announcementschangelog.md): Communicate with your users the smart way
+- [Form](https://help.usersnap.com/docs/form.md)
+- [Feedback with a screenshot](https://help.usersnap.com/docs/feedback-with-a-screenshot.md)
+- [Feedback with a screen recording](https://help.usersnap.com/docs/feedback-with-a-screen-recording.md): Now available in the rating widgets
+- [Conditional surveys](https://help.usersnap.com/docs/survey.md): Run with conditional logic
+- [Conditional raters](https://help.usersnap.com/docs/widget-conditional-behaviour.md)
+- [Branding and Customizing](https://help.usersnap.com/docs/branding-and-customizing.md)
+- [Widget translations](https://help.usersnap.com/docs/widget-language-strings.md): Widget language strings
+- [Open multiple widgets in a flow](https://help.usersnap.com/docs/chain-widgets.md): How to chain multiple widgets in a flow?
+- [Let your users add attachments in the widgets](https://help.usersnap.com/docs/let-your-users-add-attachments-in-the-widgets.md)
+- [Poll and Dropdown](https://help.usersnap.com/docs/poll.md)
+- [Showing labels in the widget for your users](https://help.usersnap.com/docs/showing-labels-in-the-widget-for-your-users.md)
+- [Widget image component](https://help.usersnap.com/docs/widget-image-component.md)
+- [Multi-page surveys](https://help.usersnap.com/docs/multi-page-surveys.md): Create multi-step surveys that feel effortless to complete and powerful to analyze.
+- [Style](https://help.usersnap.com/docs/style.md)
+- [Intro](https://help.usersnap.com/docs/intro.md)
+- [Outro](https://help.usersnap.com/docs/outro.md)
+- [Integrations](https://help.usersnap.com/docs/3rd-party-integrations-customer-feedback-projects.md): Here you will find the 3rd-party integrations available for Usersnap platform projects.
+- [Asana](https://help.usersnap.com/docs/asana.md)
+- [Azure Devops](https://help.usersnap.com/docs/azure-devops.md)
+- [Basecamp](https://help.usersnap.com/docs/basecamp.md)
+- [ClickUp](https://help.usersnap.com/docs/clickup.md)
+- [Email](https://help.usersnap.com/docs/email.md)
+- [Github](https://help.usersnap.com/docs/github.md)
+- [GitLab](https://help.usersnap.com/docs/gitlab.md)
+- [HubSpot](https://help.usersnap.com/docs/hubspot.md)
+- [Intercom](https://help.usersnap.com/docs/intercom.md)
+- [Jira Cloud with Jira Forge](https://help.usersnap.com/docs/jira-cloud-two-way-sync-with-jira-forge.md)
+- [Jira Product Discovery - Insights](https://help.usersnap.com/docs/jira-product-discovery-insights.md)
+- [Jira Software](https://help.usersnap.com/docs/jira-software.md)
+- [Linear](https://help.usersnap.com/docs/linear.md)
+- [Monday](https://help.usersnap.com/docs/monday.md)
+- [Microsoft Teams](https://help.usersnap.com/docs/microsoft-teams-1.md)
+- [Salesforce](https://help.usersnap.com/docs/salesforce.md)
+- [Slack Integration](https://help.usersnap.com/docs/slack-integration.md): for Platform projects
+- [Teamwork](https://help.usersnap.com/docs/teamwork.md)
+- [Trello](https://help.usersnap.com/docs/trello.md)
+- [Webhook](https://help.usersnap.com/docs/webhook.md)
+- [Zapier](https://help.usersnap.com/docs/zapier.md)
+- [Zendesk](https://help.usersnap.com/docs/zendesk.md): Native integration
+- [Sync new feedback items to Google spreadsheets](https://help.usersnap.com/docs/sync-new-feedback-items-to-google-spreadsheets.md)
+- [Connect with Intercom](https://help.usersnap.com/docs/connect-with-intercom.md): Include your customer support chat into the Usersnap feedback menu
+- [Connect with Zendesk Chat](https://help.usersnap.com/docs/connect-with-zendesk.md): Include your customer support chat into the Usersnap feedback menu
+- [Connect with Drift](https://help.usersnap.com/docs/connect-with-drift.md): Include your customer support chat into the Usersnap feedback menu
+- [Integrate with Quantum Metric](https://help.usersnap.com/docs/integrate-with-quantum-metric.md): Get a session replay in the powerful digital analytics platform
+- [Alloy prototyping](https://help.usersnap.com/docs/alloy-prototyping.md): Transform user insights to prototypes with Alloy
+- [Settings](https://help.usersnap.com/docs/settings-overview.md): General settings
+- [Project permissions](https://help.usersnap.com/docs/project-permissions.md): Permissions - Limited access to the dashboard
+- [Record the console errors](https://help.usersnap.com/docs/console-recorder-feature.md): Collect the good stuff for your developers
+- [Project access](https://help.usersnap.com/docs/project-access.md)
+- [Public board as a portal for your customers](https://help.usersnap.com/docs/public-portal-for-your-guest-users.md): Share the project's overview with external parties
+- [Real use cases of the board](https://help.usersnap.com/docs/real-use-cases-of-the-board.md)
+- [Copy a project](https://help.usersnap.com/docs/copy-a-project.md)
+- [AI-powered Automations](https://help.usersnap.com/docs/automations.md): AI Automations in Usersnap streamline how you analyze and act on feedback, helping your team spend less time sorting data and more time making meaningful improvements.
+- [Space](https://help.usersnap.com/docs/space.md)
+- [Notifications](https://help.usersnap.com/docs/notifications.md)
+- [Feedback Tab](https://help.usersnap.com/docs/feedback-restored.md)
+- [Triage inbox](https://help.usersnap.com/docs/inbox-customize-your-own-view.md)
+- [Add feedback items from the dashboard](https://help.usersnap.com/docs/add-feedback-items-from-the-dashboard.md)
+- [Kanban view](https://help.usersnap.com/docs/kanban-list.md)
+- [Custom statuses](https://help.usersnap.com/docs/custom-statuses.md)
+- [Get meta data with every feedback](https://help.usersnap.com/docs/get-meta-data-with-every-feedback.md)
+- [Export your project](https://help.usersnap.com/docs/export-your-project.md)
+- [Moving feedback items](https://help.usersnap.com/docs/moving-feedback-items.md)
+- [Team Management](https://help.usersnap.com/docs/usersnap-team-management.md)
+- [My account](https://help.usersnap.com/docs/my-account.md)
+- [Invite clients to your account](https://help.usersnap.com/docs/invite-clients-to-your-account.md)
+- [Authenticate users who submit feedback](https://help.usersnap.com/docs/authenticate-users-who-submit-feedback.md)
+- [User roles](https://help.usersnap.com/docs/team-user-roles.md): There are 2 levels of user roles in the dashboard.
+- [Single-Sign-On (SSO)](https://help.usersnap.com/docs/single-sign-on-sso.md)
+- [Opportunities](https://help.usersnap.com/docs/opportunities-board.md): The Opportunities is a roadmapping tool powered by real customer feedback: helping you track, prioritize, and plan actions based on solid evidence.
+- [REST API Use cases](https://help.usersnap.com/docs/rest-api-usecases.md)
+- [Feedback Analysis with Microsoft Power BI](https://help.usersnap.com/docs/feedback-analysis-with-microsoft-power-bi.md): Turn your data into immediate impact!
+- [Insights section](https://help.usersnap.com/docs/statistics-and-reports.md): Turn customer feedback into actionable insights
+- [Segments](https://help.usersnap.com/docs/userlist.md)
+- [MCP connector](https://help.usersnap.com/docs/mcp-connector.md)
+- [Security](https://help.usersnap.com/docs/security.md)
+- [Content Security Policy (CSP)](https://help.usersnap.com/docs/usersnap-with-csp.md)
+- [For your Privacy Page](https://help.usersnap.com/docs/for-your-privacy-page.md)
+- [AI Features Activation ](https://help.usersnap.com/docs/new-ai-activation-draft.md)
+- [General Topics](https://help.usersnap.com/docs/usersnap-general-topics.md)
+- [Improving the page speed](https://help.usersnap.com/docs/improving-the-page-speed.md)
+- [Why are my screenshots not fully accurate?](https://help.usersnap.com/docs/screenshots-not-accurate.md)
+- [Protected Sites](https://help.usersnap.com/docs/usersnap-protected.md)
+- [Issues with CSS & Styles](https://help.usersnap.com/docs/issues-css-styles.md)
+- [Local Development Environments](https://help.usersnap.com/docs/local-development-environments.md)
+- [Usersnap FAQ](https://help.usersnap.com/docs/usersnap-faq.md)
+- [Development FAQ](https://help.usersnap.com/docs/development-faq.md)
+- [Privacy and Security FAQ](https://help.usersnap.com/docs/privacy-and-security-faq.md)
+- [Payments FAQ](https://help.usersnap.com/docs/payments-faq.md)
+- [Subscribe to a Usersnap plan](https://help.usersnap.com/docs/subscribe-and-purchase-a-plan.md)
+- [Terms and Conditions of the Usersnap Affiliate Program](https://help.usersnap.com/docs/terms-and-conditions-of-the-usersnap-affiliate-program.md): (Effective from April 1, 2024)
+- [API reference](https://help.usersnap.com/docs/api-reference.md)
+
+## API Reference
+- [REST API](https://help.usersnap.com/reference/rest-api.md)

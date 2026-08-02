@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://help.usersnap.com/docs/webhook
+type: Webhooks
+notes: >-
+  Usersnap publishes no AsyncAPI document; this captures the documented
+  webhook surface. The webhook integration is a gated feature configured per
+  project (Integrations tab > Webhook).
+webhooks:
+  - name: feedback-webhook
+    description: >-
+      Delivers a JSON payload for feedback items to a customer-supplied
+      webhook URL. Payload fields include feedback_number, link, client
+      (url, user_agent, screen size, client), screenshot url, comment.text,
+      geo.ip_address, fields[] (order/label/values), rating.value,
+      request.text, state.identifier, and visitor.email.
+    direction: outbound
+    delivery:
+      method: POST
+      content_type: application/json
+      retries: >-
+        Usersnap checks the response status code and retries delivery several
+        times when the endpoint returns a non-200 status.
+security:
+  signature:
+    headers: [X-Usersnap-Signature, X-Usersnap-Timestamp]
+    algorithm: HMAC-SHA256
+    detail: >-
+      X-Usersnap-Signature is the HMAC SHA-256 of the request body keyed with
+      the per-integration security token; the X-Usersnap-Timestamp value is
+      folded into the hash (as 32 little-endian bytes) to prevent replay
+      attacks. Verification examples published for Python/Flask and
+      Node/Express (github.com/usersnap/public, expressjs-webhook-integration).

@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/usersnap-api-openapi-original.json
+notes: >-
+  Entity graph derived from the Usersnap platform REST API response shapes
+  (id-reference fields in the OpenAPI examples and schemas). Ids are UUIDs
+  without type prefixes.
+entities:
+  - name: Space
+    id_field: space_id
+    detail: Top-level workspace grouping projects.
+  - name: Company
+    id_field: company_id
+    detail: Account-level owner of labels and resources.
+  - name: Project
+    id_field: project_id
+    detail: A feedback project; carries api_key, owner, default assignee, feedback counts, is_live.
+  - name: Feedback
+    id_field: feedback_id
+    detail: A feedback item; number, public_link, status_type, priority, client context, screenshot, screen recording, ordered inputs, labels, custom_data.
+  - name: User
+    id_field: user_id
+    detail: Team member; assignee of feedback (first_name, last_name, gravatar_url).
+  - name: Label
+    id_field: company_label_id
+    detail: Company-level label (identifier, name, color) applied to feedback.
+  - name: Metric
+    id_field: null
+    detail: Per-project feedback field descriptor (name, help_text, metric_type enum e.g. CLIENT, TEXT, CONSOLE_LOG, JSON, GEO, SCREENSHOT, ENUM, VISITOR).
+relationships:
+  - {from: Project, to: Space, kind: belongs_to, via: space_id}
+  - {from: Project, to: Company, kind: belongs_to, via: company_id}
+  - {from: Project, to: User, kind: belongs_to, via: owner_id}
+  - {from: Project, to: User, kind: belongs_to, via: default_assignee_id}
+  - {from: Project, to: Feedback, kind: has_many, via: project_id}
+  - {from: Project, to: Metric, kind: has_many, via: api_key}
+  - {from: Project, to: User, kind: has_many, via: assignees}
+  - {from: Feedback, to: Project, kind: belongs_to, via: project_id}
+  - {from: Feedback, to: User, kind: belongs_to, via: assignee_id}
+  - {from: Feedback, to: Label, kind: has_many, via: 'labels[].company_label_id'}
+  - {from: Label, to: Company, kind: belongs_to, via: company_label_id}

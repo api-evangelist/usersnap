@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/usersnap-api-openapi-original.json
+format: custom-envelope
+envelope:
+  description: >-
+    Usersnap API errors return a JSON envelope, not RFC 9457 problem+json.
+    Fields: status (boolean, false on error), msg (human-readable message),
+    errortype (machine-readable error code string), errordata (object with
+    contextual fields, e.g. the offending id).
+  fields: [status, msg, errortype, errordata]
+error_types:
+  - errortype: WRONG_AUTH
+    status: 401
+    title: Authorization failed
+    detail: Authorization header missing or invalid (bad or missing bearer JWT).
+    example_msg: Authorization failed
+  - errortype: SITE_NOT_FOUND
+    status: 400
+    title: Site does not exist
+    detail: The referenced project/site id does not exist.
+    example_errordata: {site_id: 50c4cdd6-4801-42b9-b785-b5cf90fcbb65}
+problems:
+  - status: 400
+    title: Error response
+    description: Generic 400 error envelope (status/msg/errortype/errordata).
+    source_operations:
+      - openapi/usersnap-api-openapi-original.json#submitFeedback
+      - openapi/usersnap-api-openapi-original.json#getProjectMetrics
+      - openapi/usersnap-api-openapi-original.json#getProjectAssignees
+      - openapi/usersnap-api-openapi-original.json#getProjects
+      - openapi/usersnap-api-openapi-original.json#getProjectFeedbacks
+      - openapi/usersnap-api-openapi-original.json#getProjectFeedbacksCount
+      - openapi/usersnap-api-openapi-original.json#filterProjectFeedbacks
+      - openapi/usersnap-api-openapi-original.json#filterProjectFeedbacksCount
+  - status: 401
+    title: Authorization header missing or invalid
+    description: Returned by every operation when the bearer JWT is missing or invalid.
+    source_operations:
+      - openapi/usersnap-api-openapi-original.json#submitFeedback
+      - openapi/usersnap-api-openapi-original.json#getProjectMetrics
+      - openapi/usersnap-api-openapi-original.json#getProjectAssignees
+      - openapi/usersnap-api-openapi-original.json#getProjects
+      - openapi/usersnap-api-openapi-original.json#getProjectFeedbacks
+      - openapi/usersnap-api-openapi-original.json#getProjectFeedbacksCount
+      - openapi/usersnap-api-openapi-original.json#filterProjectFeedbacks
+      - openapi/usersnap-api-openapi-original.json#filterProjectFeedbacksCount

@@ -1,0 +1,1 @@
+{"resource":"https://mcp.usersnap.com/mcp","authorization_servers":["https://id.usersnap.com"],"scopes_supported":["read:feedback","write:opportunity"],"bearer_methods_supported":["header"]}

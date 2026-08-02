@@ -1,0 +1,301 @@
+{
+  "info": {
+    "_postman_id": "c4890088-b9ea-42a5-a011-c96eb0ecb76c",
+    "name": "Usersnap feedback submit API",
+    "description": "Make feedback matter! Now with a RESTful API\n\nContact Support:\n Name: Usersnap Contact\n Email: contact@usersnap.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T03:26:15.000Z",
+    "updatedAt": "2026-07-28T03:26:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c4890088-b9ea-42a5-a011-c96eb0ecb76c"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{api_key}",
+          "item": [
+            {
+              "name": "feedbacks",
+              "item": [
+                {
+                  "name": "Submit feedback",
+                  "id": "1664bd37-3fc6-475a-b1d8-188db429122c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{bearerToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"api_key\": \"<string>\",\n  \"visitor\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"client\": {\n    \"url\": \"<string>\",\n    \"screen_width\": \"<integer>\",\n    \"screen_height\": \"<integer>\"\n  },\n  \"rating\": \"<integer>\",\n  \"attachments\": [\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:api_key/feedbacks",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":api_key",
+                        "feedbacks"
+                      ],
+                      "variable": [
+                        {
+                          "id": "346cdd42-631f-4dc3-a303-bb17287efd35",
+                          "key": "api_key",
+                          "value": "<string>",
+                          "description": "(Required) Project API key"
+                        }
+                      ]
+                    },
+                    "description": "Through this endpoint you can submit feedback to a project with following data (all of the fields are optional):\n\n- Visitor:\nEmail of the person the feedback is from\n\n- Comment:\nA text value\n\n- Assignee:\nID of the assigned user (available through request to assignees endpoint) or email.\nIf not passed, the default assignee will be used. If null value is passed, the feedback will not be assigned to anyone.\n\n- Rating:\nIf the project is set up with NPS/5 star/5 smileys/thumbs up rating field, you can pass a rating field.\nIts value should be an integer between 1 and 10 for NPS, 1 and 5 for 5 star, 1 and 5 for 5 smileys, 1 and -1 for thumbs up/down.\n\n- Client:\nAn object, containing 3 fields:\n    - url - URL of the page, string\n    - screen_width - Screen width, as integer\n    - screen height - Screen height, as integer\n\n- Attachments:\nAn array of objects, each containing a file attachment, composed of 3 fields:\n    - content - content of the file encoded in base64\n    - filename - the name of the file\n    - mime_type - the mime type of the file\nMaximum size of each file is 20MiB.\n"
+                  },
+                  "response": [
+                    {
+                      "id": "26950b58-a79c-4537-878e-60293d8d2943",
+                      "name": "Returns the id of the created feedback",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"api_key\": \"<string>\",\n  \"visitor\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"client\": {\n    \"url\": \"<string>\",\n    \"screen_width\": \"<integer>\",\n    \"screen_height\": \"<integer>\"\n  },\n  \"rating\": \"<integer>\",\n  \"attachments\": [\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/feedbacks",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "feedbacks"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"data\": {\n    \"feedback\": {\n      \"feedback_id\": \"<string>\"\n    }\n  }\n}",
+                      "createdAt": "2026-07-28T03:26:16.000Z",
+                      "updatedAt": "2026-07-28T03:26:16.000Z",
+                      "uid": "35240-26950b58-a79c-4537-878e-60293d8d2943"
+                    },
+                    {
+                      "id": "7437dd45-f96d-4c77-b88d-6c9b3c44c606",
+                      "name": "Error response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"api_key\": \"<string>\",\n  \"visitor\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"client\": {\n    \"url\": \"<string>\",\n    \"screen_width\": \"<integer>\",\n    \"screen_height\": \"<integer>\"\n  },\n  \"rating\": \"<integer>\",\n  \"attachments\": [\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/feedbacks",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "feedbacks"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"msg\": \"<string>\",\n  \"errortype\": \"<string>\",\n  \"errordata\": {}\n}",
+                      "createdAt": "2026-07-28T03:26:16.000Z",
+                      "updatedAt": "2026-07-28T03:26:16.000Z",
+                      "uid": "35240-7437dd45-f96d-4c77-b88d-6c9b3c44c606"
+                    },
+                    {
+                      "id": "c7d7a5e2-847a-4781-8a01-40f4f4aea033",
+                      "name": "Authorization header missing or invalid",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"api_key\": \"<string>\",\n  \"visitor\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"client\": {\n    \"url\": \"<string>\",\n    \"screen_width\": \"<integer>\",\n    \"screen_height\": \"<integer>\"\n  },\n  \"rating\": \"<integer>\",\n  \"attachments\": [\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:api_key/feedbacks",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":api_key",
+                            "feedbacks"
+                          ],
+                          "variable": [
+                            {
+                              "key": "api_key"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"status\": \"<boolean>\",\n  \"msg\": \"<string>\",\n  \"errortype\": \"<string>\",\n  \"errordata\": {}\n}",
+                      "createdAt": "2026-07-28T03:26:16.000Z",
+                      "updatedAt": "2026-07-28T03:26:16.000Z",
+                      "uid": "35240-c7d7a5e2-847a-4781-8a01-40f4f4aea033"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T03:26:16.000Z",
+                  "updatedAt": "2026-07-28T03:26:16.000Z",
+                  "uid": "35240-1664bd37-3fc6-475a-b1d8-188db429122c"
+                }
+              ],
+              "id": "63d3cb9b-b6b9-46f1-a4e3-3914c0aa4432",
+              "createdAt": "2026-07-28T03:26:16.000Z",
+              "updatedAt": "2026-07-28T03:26:16.000Z",
+              "uid": "35240-63d3cb9b-b6b9-46f1-a4e3-3914c0aa4432"
+            }
+          ],
+          "id": "3ef7f73d-dafb-40ad-8364-057e9df6f8f6",
+          "createdAt": "2026-07-28T03:26:16.000Z",
+          "updatedAt": "2026-07-28T03:26:16.000Z",
+          "uid": "35240-3ef7f73d-dafb-40ad-8364-057e9df6f8f6"
+        }
+      ],
+      "id": "e9265e30-e0d5-4001-bbbf-15149ecd691c",
+      "createdAt": "2026-07-28T03:26:16.000Z",
+      "updatedAt": "2026-07-28T03:26:16.000Z",
+      "uid": "35240-e9265e30-e0d5-4001-bbbf-15149ecd691c"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://platform.usersnap.com/v0.1"
+    }
+  ]
+}

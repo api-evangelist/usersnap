@@ -98,6 +98,8 @@ apis:
   - type: SwaggerHub
     url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
 common:
+- type: Overlay
+  url: overlays/usersnap-api-overlay.yaml
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/usersnap/overview
 - type: AgenticAccess

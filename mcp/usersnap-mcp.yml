@@ -12,28 +12,35 @@ server:
     issuer: https://id.usersnap.com
     authorization_endpoint: https://id.usersnap.com/auth/oauth2/authorize
     token_endpoint: https://id.usersnap.com/auth/oauth2/token
-    scopes: [read:feedback, write:opportunity]
+    scopes:
+    - read:feedback
+    - write:opportunity
     metadata: well-known/usersnap-oauth-authorization-server.json
-    detail: >-
-      Sign in with Usersnap via an OAuth 2.1 + PKCE login window; access is
-      enabled per company, re-checked on every request, and scoped to the
-      connecting user's existing Usersnap permissions.
+    detail: Sign in with Usersnap via an OAuth 2.1 + PKCE login window; access is enabled per company,
+      re-checked on every request, and scoped to the connecting user's existing Usersnap permissions.
 capabilities:
   read: true
   write: true
-  write_detail: >-
-    Read access to feedback plus creation of Opportunities and linking of
-    feedback; it cannot edit or delete existing feedback. Writes are audit
-    logged and de-duplicated (repeated requests do not create duplicates).
-clients_documented: [Claude, ChatGPT, Cursor]
+  write_detail: Read access to feedback plus creation of Opportunities and linking of feedback; it cannot
+    edit or delete existing feedback. Writes are audit logged and de-duplicated (repeated requests do
+    not create duplicates).
+clients_documented:
+- Claude
+- ChatGPT
+- Cursor
 safeguards:
-  - Acts with the connecting user's permissions only (per-company enablement, re-checked per request).
-  - Email addresses are stripped from feedback/opportunities before reaching the AI.
-  - Identity assertion generated from a freshly verified login; client-supplied copies rejected.
-  - Backend engine not internet-facing; reachable only through Usersnap's authenticated edge.
-  - App onboarding fetches client metadata only from allowlisted addresses.
-  - Every write is recorded in an internal audit trail.
-notes: >-
-  Official hosted MCP connector documented in the Usersnap help center. New
-  data only by default; historical data indexing requires contacting the
-  Customer Success team.
+- Acts with the connecting user's permissions only (per-company enablement, re-checked per request).
+- Email addresses are stripped from feedback/opportunities before reaching the AI.
+- Identity assertion generated from a freshly verified login; client-supplied copies rejected.
+- Backend engine not internet-facing; reachable only through Usersnap's authenticated edge.
+- App onboarding fetches client metadata only from allowlisted addresses.
+- Every write is recorded in an internal audit trail.
+notes: Official hosted MCP connector documented in the Usersnap help center. New data only by default;
+  historical data indexing requires contacting the Customer Success team.
+deployment:
+  mode: remote
+  endpoint: https://mcp.usersnap.com/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census

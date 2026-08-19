@@ -1,0 +1,970 @@
+{
+  "item": [
+    {
+      "id": "b883c8f8-8697-48e9-8579-aff75b43dbff",
+      "name": "feedback",
+      "description": {
+        "content": "Feedback related endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "744c27d0-f5df-4c10-9a4b-08a701da9536",
+          "name": "Get all feedbacks",
+          "request": {
+            "name": "Get all feedbacks",
+            "description": {
+              "content": "List all feedbacks of the given project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project_id",
+                "feedbacks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) Project ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "40e0e577-395d-4408-b952-05a5b0b26647",
+              "name": "List of feedbacks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"data\": {\n    \"has_more\": false,\n    \"count\": 543,\n    \"feedbacks\": [\n      {\n        \"feedback_id\": \"string\",\n        \"feedback_number\": 824,\n        \"public_link\": \"string\",\n        \"project_id\": \"string\",\n        \"created_at\": \"1986-08-23T22:13:08.284Z\",\n        \"updated_at\": \"1994-03-26T17:57:09.021Z\",\n        \"status_type\": \"string\",\n        \"priority\": \"string\",\n        \"assignee_id\": \"string\",\n        \"is_demo\": false,\n        \"email\": \"string\",\n        \"client\": {\n          \"url\": \"string\",\n          \"client_type\": \"string\",\n          \"city_name\": \"string\",\n          \"country_name\": \"string\",\n          \"screen_width\": 6543,\n          \"screen_height\": 7646,\n          \"browser_full_name\": \"string\",\n          \"browser_os\": \"string\",\n          \"browser_name\": \"string\",\n          \"browser_version\": \"string\"\n        },\n        \"custom_data\": {},\n        \"screenshot\": {\n          \"annotated_image_url\": \"string\",\n          \"comments\": [\n            {\n              \"label\": \"string\",\n              \"comment\": \"string\"\n            },\n            {\n              \"label\": \"string\",\n              \"comment\": \"string\"\n            }\n          ]\n        },\n        \"screen_recording\": {\n          \"file_resource_url\": \"string\",\n          \"mime_type\": \"string\"\n        },\n        \"ordered_inputs\": [\n          {\n            \"order\": 718,\n            \"label\": \"string\",\n            \"boolean_value\": true,\n            \"text_value\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"order\": 416,\n            \"label\": \"string\",\n            \"boolean_value\": false,\n            \"text_value\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"labels\": [\n          {\n            \"company_label_id\": \"string\",\n            \"identifier\": \"string\",\n            \"name\": \"string\",\n            \"color\": \"string\"\n          },\n          {\n            \"company_label_id\": \"string\",\n            \"identifier\": \"string\",\n            \"name\": \"string\",\n            \"color\": \"string\"\n          }\n        ]\n      },\n      {\n        \"feedback_id\": \"string\",\n        \"feedback_number\": 157,\n        \"public_link\": \"string\",\n        \"project_id\": \"string\",\n        \"created_at\": \"1990-01-26T23:19:47.209Z\",\n        \"updated_at\": \"2025-02-13T08:02:43.537Z\",\n        \"status_type\": \"string\",\n        \"priority\": \"string\",\n        \"assignee_id\": \"string\",\n        \"is_demo\": true,\n        \"email\": \"string\",\n        \"client\": {\n          \"url\": \"string\",\n          \"client_type\": \"string\",\n          \"city_name\": \"string\",\n          \"country_name\": \"string\",\n          \"screen_width\": 7242,\n          \"screen_height\": 1677,\n          \"browser_full_name\": \"string\",\n          \"browser_os\": \"string\",\n          \"browser_name\": \"string\",\n          \"browser_version\": \"string\"\n        },\n        \"custom_data\": {},\n        \"screenshot\": {\n          \"annotated_image_url\": \"string\",\n          \"comments\": [\n            {\n              \"label\": \"string\",\n              \"comment\": \"string\"\n            },\n            {\n              \"label\": \"string\",\n              \"comment\": \"string\"\n            }\n          ]\n        },\n        \"screen_recording\": {\n          \"file_resource_url\": \"string\",\n          \"mime_type\": \"string\"\n        },\n        \"ordered_inputs\": [\n          {\n            \"order\": 694,\n            \"label\": \"string\",\n            \"boolean_value\": true,\n            \"text_value\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"order\": 2576,\n            \"label\": \"string\",\n            \"boolean_value\": false,\n            \"text_value\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"labels\": [\n          {\n            \"company_label_id\": \"string\",\n            \"identifier\": \"string\",\n            \"name\": \"string\",\n            \"color\": \"string\"\n          },\n          {\n            \"company_label_id\": \"string\",\n            \"identifier\": \"string\",\n            \"name\": \"string\",\n            \"color\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"next\": {\n      \"query_string\": \"string\",\n      \"limit\": 2236,\n      \"after\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe984353-3efe-412f-aeca-d7f9c35c7c6e",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Site does not exist\",\n  \"errortype\": \"SITE_NOT_FOUND\",\n  \"errordata\": {\n    \"site_id\": \"50c4cdd6-4801-42b9-b785-b5cf90fcbb65\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6507c2d3-24df-4d38-8344-6fbf2280279a",
+              "name": "Authorization header missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Authorization failed\",\n  \"errortype\": \"WRONG_AUTH\",\n  \"errordata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "519dbc42-f006-42df-aa98-7b23dc91fd6a",
+          "name": "Get feedback count",
+          "request": {
+            "name": "Get feedback count",
+            "description": {
+              "content": "Get the count of feedbacks of the given project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project_id",
+                "feedbacks",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) Project ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f8bfe73a-13d1-4900-81bd-d1cc2c6cedd7",
+              "name": "Returns the count of feedbacks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"data\": {\n    \"total_count\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d479a0a-01f7-47a5-89c2-aeaad6fe3bb8",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Site does not exist\",\n  \"errortype\": \"SITE_NOT_FOUND\",\n  \"errordata\": {\n    \"site_id\": \"50c4cdd6-4801-42b9-b785-b5cf90fcbb65\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0dc3894-ce53-4b2f-bb7d-22d895727a5a",
+              "name": "Authorization header missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Authorization failed\",\n  \"errortype\": \"WRONG_AUTH\",\n  \"errordata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4291457c-3275-4c70-8b31-e3755c50b318",
+          "name": "Get all feedbacks",
+          "request": {
+            "name": "Get all feedbacks",
+            "description": {
+              "content": "List all feedbacks of the given project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project_id",
+                "feedbacks",
+                "filter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) Project ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": [\n    {\n      \"filter_type\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"filter_type\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"order_by\": {\n    \"order_by_type\": \"<string>\",\n    \"direction\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd638d57-31d6-4cad-a6a3-a72392eb0a64",
+              "name": "List of feedbacks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_by\": {\n    \"direction\": \"desc\",\n    \"order_by_type\": \"created_at\"\n  },\n  \"query\": [\n    {\n      \"filter_type\": \"state\",\n      \"operator\": \"eq\",\n      \"value\": \"done\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"data\": {\n    \"has_more\": false,\n    \"count\": 8116,\n    \"feedbacks\": [\n      {\n        \"feedback_id\": \"string\",\n        \"feedback_number\": 50,\n        \"public_link\": \"string\",\n        \"project_id\": \"string\",\n        \"created_at\": \"1990-01-16T03:46:10.854Z\",\n        \"updated_at\": \"1990-11-19T17:46:33.182Z\",\n        \"status_type\": \"string\",\n        \"priority\": \"string\",\n        \"assignee_id\": \"string\",\n        \"is_demo\": false,\n        \"email\": \"string\",\n        \"client\": {\n          \"url\": \"string\",\n          \"client_type\": \"string\",\n          \"city_name\": \"string\",\n          \"country_name\": \"string\",\n          \"screen_width\": 1160,\n          \"screen_height\": 6869,\n          \"browser_full_name\": \"string\",\n          \"browser_os\": \"string\",\n          \"browser_name\": \"string\",\n          \"browser_version\": \"string\"\n        },\n        \"custom_data\": {},\n        \"screenshot\": {\n          \"annotated_image_url\": \"string\",\n          \"comments\": [\n            {\n              \"label\": \"string\",\n              \"comment\": \"string\"\n            },\n            {\n              \"label\": \"string\",\n              \"comment\": \"string\"\n            }\n          ]\n        },\n        \"screen_recording\": {\n          \"file_resource_url\": \"string\",\n          \"mime_type\": \"string\"\n        },\n        \"ordered_inputs\": [\n          {\n            \"order\": 846,\n            \"label\": \"string\",\n            \"boolean_value\": false,\n            \"text_value\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"order\": 1857,\n            \"label\": \"string\",\n            \"boolean_value\": true,\n            \"text_value\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"labels\": [\n          {\n            \"company_label_id\": \"string\",\n            \"identifier\": \"string\",\n            \"name\": \"string\",\n            \"color\": \"string\"\n          },\n          {\n            \"company_label_id\": \"string\",\n            \"identifier\": \"string\",\n            \"name\": \"string\",\n            \"color\": \"string\"\n          }\n        ]\n      },\n      {\n        \"feedback_id\": \"string\",\n        \"feedback_number\": 4283,\n        \"public_link\": \"string\",\n        \"project_id\": \"string\",\n        \"created_at\": \"1986-10-07T09:41:55.606Z\",\n        \"updated_at\": \"1960-08-27T09:28:09.182Z\",\n        \"status_type\": \"string\",\n        \"priority\": \"string\",\n        \"assignee_id\": \"string\",\n        \"is_demo\": true,\n        \"email\": \"string\",\n        \"client\": {\n          \"url\": \"string\",\n          \"client_type\": \"string\",\n          \"city_name\": \"string\",\n          \"country_name\": \"string\",\n          \"screen_width\": 5304,\n          \"screen_height\": 8135,\n          \"browser_full_name\": \"string\",\n          \"browser_os\": \"string\",\n          \"browser_name\": \"string\",\n          \"browser_version\": \"string\"\n        },\n        \"custom_data\": {},\n        \"screenshot\": {\n          \"annotated_image_url\": \"string\",\n          \"comments\": [\n            {\n              \"label\": \"string\",\n              \"comment\": \"string\"\n            },\n            {\n              \"label\": \"string\",\n              \"comment\": \"string\"\n            }\n          ]\n        },\n        \"screen_recording\": {\n          \"file_resource_url\": \"string\",\n          \"mime_type\": \"string\"\n        },\n        \"ordered_inputs\": [\n          {\n            \"order\": 4095,\n            \"label\": \"string\",\n            \"boolean_value\": true,\n            \"text_value\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"order\": 106,\n            \"label\": \"string\",\n            \"boolean_value\": true,\n            \"text_value\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"labels\": [\n          {\n            \"company_label_id\": \"string\",\n            \"identifier\": \"string\",\n            \"name\": \"string\",\n            \"color\": \"string\"\n          },\n          {\n            \"company_label_id\": \"string\",\n            \"identifier\": \"string\",\n            \"name\": \"string\",\n            \"color\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"next\": {\n      \"query_string\": \"string\",\n      \"limit\": 7510,\n      \"after\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9f45a36-29f0-4361-a109-b1085ee5ef8a",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_by\": {\n    \"direction\": \"desc\",\n    \"order_by_type\": \"created_at\"\n  },\n  \"query\": [\n    {\n      \"filter_type\": \"state\",\n      \"operator\": \"eq\",\n      \"value\": \"done\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Site does not exist\",\n  \"errortype\": \"SITE_NOT_FOUND\",\n  \"errordata\": {\n    \"site_id\": \"50c4cdd6-4801-42b9-b785-b5cf90fcbb65\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b70e33fc-6cf2-4878-832e-4d97a001881c",
+              "name": "Authorization header missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_by\": {\n    \"direction\": \"desc\",\n    \"order_by_type\": \"created_at\"\n  },\n  \"query\": [\n    {\n      \"filter_type\": \"state\",\n      \"operator\": \"eq\",\n      \"value\": \"done\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Authorization failed\",\n  \"errortype\": \"WRONG_AUTH\",\n  \"errordata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a79fdce-3705-43b5-9c4c-01d7ffb48d80",
+          "name": "Get feedback count",
+          "request": {
+            "name": "Get feedback count",
+            "description": {
+              "content": "Get the count of feedbacks of the given project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project_id",
+                "feedbacks",
+                "filter",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) Project ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": [\n    {\n      \"filter_type\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"filter_type\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"order_by\": {\n    \"order_by_type\": \"<string>\",\n    \"direction\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "217e6da2-9f38-4fd2-b4ee-52acc08a312c",
+              "name": "Returns the count of feedbacks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "filter",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_by\": {\n    \"direction\": \"desc\",\n    \"order_by_type\": \"created_at\"\n  },\n  \"query\": [\n    {\n      \"filter_type\": \"state\",\n      \"operator\": \"eq\",\n      \"value\": \"done\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"data\": {\n    \"total_count\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "286f9e8c-7009-4fdd-b0b4-c41c8f736591",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "filter",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_by\": {\n    \"direction\": \"desc\",\n    \"order_by_type\": \"created_at\"\n  },\n  \"query\": [\n    {\n      \"filter_type\": \"state\",\n      \"operator\": \"eq\",\n      \"value\": \"done\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Site does not exist\",\n  \"errortype\": \"SITE_NOT_FOUND\",\n  \"errordata\": {\n    \"site_id\": \"50c4cdd6-4801-42b9-b785-b5cf90fcbb65\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89fa1321-9483-416d-9c67-61602fe4a156",
+              "name": "Authorization header missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "feedbacks",
+                    "filter",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) Project ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_by\": {\n    \"direction\": \"desc\",\n    \"order_by_type\": \"created_at\"\n  },\n  \"query\": [\n    {\n      \"filter_type\": \"state\",\n      \"operator\": \"eq\",\n      \"value\": \"done\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Authorization failed\",\n  \"errortype\": \"WRONG_AUTH\",\n  \"errordata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://platform.usersnap.com/v0.1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bf7c14d6-900f-4155-9075-8e6d5d8bc8d4",
+    "name": "Usersnap feedback API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Make feedback matter! Now with a RESTful API\n\nContact Support:\n Name: Usersnap Contact\n Email: contact@usersnap.com",
+      "type": "text/plain"
+    }
+  }
+}

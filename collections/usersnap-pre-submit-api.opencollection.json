@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Usersnap feedback pre_submit API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pre_submit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get project metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://platform.usersnap.com/v0.1/projects/:api_key/metrics",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "path",
+                "description": "Project API key"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all the metrics that are available for this project"
+        },
+        {
+          "info": {
+            "name": "Get project assignees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://platform.usersnap.com/v0.1/projects/:api_key/assignees",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "path",
+                "description": "Project API key"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all the assignees that are available for this project"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,456 @@
+{
+  "item": [
+    {
+      "id": "133d0b98-2cda-402b-8e92-c698b44b806d",
+      "name": "pre_submit",
+      "description": {
+        "content": "Available options for submission",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42e2d5d8-0ac1-4343-8a62-ab1b8ff81c34",
+          "name": "Get project metrics",
+          "request": {
+            "name": "Get project metrics",
+            "description": {
+              "content": "List all the metrics that are available for this project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":api_key",
+                "metrics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api_key",
+                  "description": "(Required) Project API key"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ba479a0b-361a-448f-ae87-3b8d483a06fa",
+              "name": "Returns the list of metrics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"data\": {\n    \"metrics\": [\n      {\n        \"name\": \"string\",\n        \"help_text\": \"string\",\n        \"metric_type\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"help_text\": \"string\",\n        \"metric_type\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "21492487-3a01-475f-91a9-4fa2c555e8e5",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Site does not exist\",\n  \"errortype\": \"SITE_NOT_FOUND\",\n  \"errordata\": {\n    \"site_id\": \"50c4cdd6-4801-42b9-b785-b5cf90fcbb65\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c1a3df3-2682-4ddd-84f6-e6226cd435e0",
+              "name": "Authorization header missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Authorization failed\",\n  \"errortype\": \"WRONG_AUTH\",\n  \"errordata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "793df08d-7e22-4794-b66a-88caacc7ae3c",
+          "name": "Get project assignees",
+          "request": {
+            "name": "Get project assignees",
+            "description": {
+              "content": "List all the assignees that are available for this project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":api_key",
+                "assignees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api_key",
+                  "description": "(Required) Project API key"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5741b4e2-6cbd-4b84-a62a-f307d2deb24a",
+              "name": "Returns the list of users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "assignees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"data\": {\n    \"users\": [\n      {\n        \"user_id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"gravatar_url\": \"string\"\n      },\n      {\n        \"user_id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"gravatar_url\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "61b1e196-a203-4976-8513-9975206c2dac",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "assignees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Site does not exist\",\n  \"errortype\": \"SITE_NOT_FOUND\",\n  \"errordata\": {\n    \"site_id\": \"50c4cdd6-4801-42b9-b785-b5cf90fcbb65\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cf3337f8-a48d-4adf-9630-b798e24c9fb9",
+              "name": "Authorization header missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "assignees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Authorization failed\",\n  \"errortype\": \"WRONG_AUTH\",\n  \"errordata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://platform.usersnap.com/v0.1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6e35d921-9b3a-4da8-ab7c-ceaec5cc3a34",
+    "name": "Usersnap feedback pre_submit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Make feedback matter! Now with a RESTful API\n\nContact Support:\n Name: Usersnap Contact\n Email: contact@usersnap.com",
+      "type": "text/plain"
+    }
+  }
+}

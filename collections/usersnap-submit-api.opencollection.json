@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Usersnap feedback submit API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "submit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://platform.usersnap.com/v0.1/projects/:api_key/feedbacks",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "path",
+                "description": "Project API key"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Through this endpoint you can submit feedback to a project with following data (all of the fields are optional):\n\n- Visitor:\nEmail of the person the feedback is from\n\n- Comment:\nA text value\n\n- Assignee:\nID of the assigned user (available through request to assignees endpoint) or email.\nIf not passed, the default assignee will be used. If null value is passed, the feedback will not be assigned to anyone.\n\n- Rating:\nIf the project is set up with NPS/5 star/5 smileys/thumbs up rating field, you ca"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

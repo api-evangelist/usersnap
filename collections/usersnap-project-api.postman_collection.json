@@ -1,0 +1,204 @@
+{
+  "item": [
+    {
+      "id": "5d597ed1-43db-4354-9361-f0240811908f",
+      "name": "project",
+      "description": {
+        "content": "Project related endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "05411fda-7230-47b9-92f6-62077d7d3b8d",
+          "name": "Get all projects",
+          "request": {
+            "name": "Get all projects",
+            "description": {
+              "content": "List all projects that are available for the current user",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "06e24e3d-cdae-47b9-9c8c-0f6056b00a1e",
+              "name": "Returns the list of projects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"data\": {\n    \"has_more\": false,\n    \"count\": 47,\n    \"projects\": [\n      {\n        \"project_id\": \"string\",\n        \"api_key\": \"string\",\n        \"company_id\": \"string\",\n        \"space_id\": \"string\",\n        \"created_at\": \"1963-09-19T12:22:20.267Z\",\n        \"updated_at\": \"1979-09-10T17:39:14.385Z\",\n        \"archived_at\": \"2019-01-01T08:53:50.351Z\",\n        \"owner_id\": \"string\",\n        \"default_assignee_id\": \"string\",\n        \"name\": \"string\",\n        \"is_live\": false,\n        \"feedback_count\": 4723,\n        \"open_feedback_count\": 5362\n      },\n      {\n        \"project_id\": \"string\",\n        \"api_key\": \"string\",\n        \"company_id\": \"string\",\n        \"space_id\": \"string\",\n        \"created_at\": \"1991-12-15T07:00:42.802Z\",\n        \"updated_at\": \"1979-04-20T04:16:21.308Z\",\n        \"archived_at\": \"1991-12-30T16:00:59.880Z\",\n        \"owner_id\": \"string\",\n        \"default_assignee_id\": \"string\",\n        \"name\": \"string\",\n        \"is_live\": true,\n        \"feedback_count\": 9894,\n        \"open_feedback_count\": 7682\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1668d9f8-4a5f-4b30-95df-b5050a9097da",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Site does not exist\",\n  \"errortype\": \"SITE_NOT_FOUND\",\n  \"errordata\": {\n    \"site_id\": \"50c4cdd6-4801-42b9-b785-b5cf90fcbb65\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb3c96ce-34ae-4afb-a03f-9fd95dacfb30",
+              "name": "Authorization header missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Authorization failed\",\n  \"errortype\": \"WRONG_AUTH\",\n  \"errordata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://platform.usersnap.com/v0.1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9edf9a21-0aff-4cb4-af21-34d24731210c",
+    "name": "Usersnap feedback project API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Make feedback matter! Now with a RESTful API\n\nContact Support:\n Name: Usersnap Contact\n Email: contact@usersnap.com",
+      "type": "text/plain"
+    }
+  }
+}

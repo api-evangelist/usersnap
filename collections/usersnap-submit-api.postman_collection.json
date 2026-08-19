@@ -1,0 +1,281 @@
+{
+  "item": [
+    {
+      "id": "154e24f4-97b0-4a00-91c3-bd2509074835",
+      "name": "submit",
+      "description": {
+        "content": "Submit feedback",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6a424e84-d118-4dee-8729-28f3ab154fbc",
+          "name": "Submit feedback",
+          "request": {
+            "name": "Submit feedback",
+            "description": {
+              "content": "Through this endpoint you can submit feedback to a project with following data (all of the fields are optional):\n\n- Visitor:\nEmail of the person the feedback is from\n\n- Comment:\nA text value\n\n- Assignee:\nID of the assigned user (available through request to assignees endpoint) or email.\nIf not passed, the default assignee will be used. If null value is passed, the feedback will not be assigned to anyone.\n\n- Rating:\nIf the project is set up with NPS/5 star/5 smileys/thumbs up rating field, you can pass a rating field.\nIts value should be an integer between 1 and 10 for NPS, 1 and 5 for 5 star, 1 and 5 for 5 smileys, 1 and -1 for thumbs up/down.\n\n- Client:\nAn object, containing 3 fields:\n    - url - URL of the page, string\n    - screen_width - Screen width, as integer\n    - screen height - Screen height, as integer\n\n- Attachments:\nAn array of objects, each containing a file attachment, composed of 3 fields:\n    - content - content of the file encoded in base64\n    - filename - the name of the file\n    - mime_type - the mime type of the file\nMaximum size of each file is 20MiB.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":api_key",
+                "feedbacks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api_key",
+                  "description": "(Required) Project API key"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"api_key\": \"<string>\",\n  \"visitor\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"client\": {\n    \"url\": \"<string>\",\n    \"screen_width\": \"<integer>\",\n    \"screen_height\": \"<integer>\"\n  },\n  \"rating\": \"<integer>\",\n  \"attachments\": [\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    },\n    {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"mime_type\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6efd3f77-da08-4422-8f5a-52abb71667a7",
+              "name": "Returns the id of the created feedback",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "feedbacks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"visitor\": \"customer@example.com\",\n  \"comment\": \"I like the new feature\",\n  \"rating\": 9,\n  \"client\": {\n    \"url\": \"https://example.com\",\n    \"screen_width\": 1920,\n    \"screen_height\": 1080\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"data\": {\n    \"feedback\": {\n      \"feedback_id\": \"caf0bb21-2047-4dd8-809c-9970b951bb33\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2cc2dd79-c18c-4deb-a192-768d1d2ea5be",
+              "name": "Error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "feedbacks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"visitor\": \"customer@example.com\",\n  \"comment\": \"I like the new feature\",\n  \"rating\": 9,\n  \"client\": {\n    \"url\": \"https://example.com\",\n    \"screen_width\": 1920,\n    \"screen_height\": 1080\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Site does not exist\",\n  \"errortype\": \"SITE_NOT_FOUND\",\n  \"errordata\": {\n    \"site_id\": \"50c4cdd6-4801-42b9-b785-b5cf90fcbb65\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "254b5f47-d47c-44d6-b9cc-85def6212420",
+              "name": "Authorization header missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":api_key",
+                    "feedbacks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api_key",
+                      "description": "(Required) Project API key"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"visitor\": \"customer@example.com\",\n  \"comment\": \"I like the new feature\",\n  \"rating\": 9,\n  \"client\": {\n    \"url\": \"https://example.com\",\n    \"screen_width\": 1920,\n    \"screen_height\": 1080\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"msg\": \"Authorization failed\",\n  \"errortype\": \"WRONG_AUTH\",\n  \"errordata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://platform.usersnap.com/v0.1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2acc7afa-c73d-4e69-b766-82e8be55b7b6",
+    "name": "Usersnap feedback submit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Make feedback matter! Now with a RESTful API\n\nContact Support:\n Name: Usersnap Contact\n Email: contact@usersnap.com",
+      "type": "text/plain"
+    }
+  }
+}

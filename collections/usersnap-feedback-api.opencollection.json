@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Usersnap feedback API",
+    "version": "0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "feedback",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all feedbacks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://platform.usersnap.com/v0.1/projects/:project_id/feedbacks",
+            "params": [
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all feedbacks of the given project"
+        },
+        {
+          "info": {
+            "name": "Get feedback count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://platform.usersnap.com/v0.1/projects/:project_id/feedbacks/count",
+            "params": [
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get the count of feedbacks of the given project"
+        },
+        {
+          "info": {
+            "name": "Get all feedbacks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://platform.usersnap.com/v0.1/projects/:project_id/feedbacks/filter",
+            "params": [
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List all feedbacks of the given project"
+        },
+        {
+          "info": {
+            "name": "Get feedback count",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://platform.usersnap.com/v0.1/projects/:project_id/feedbacks/filter/count",
+            "params": [
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "path",
+                "description": "Project ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get the count of feedbacks of the given project"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

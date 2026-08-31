@@ -114,7 +114,7 @@ apis:
   humanURL: https://help.usersnap.com/reference/rest-api
   baseURL: https://platform.usersnap.com/v0.1
   tags:
-  - Submit
+  - submit
   tags_raw:
   - submit
   properties:

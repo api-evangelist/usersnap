@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Usersnap feedback project API
+  title: Usersnap Project API
   description: Make feedback matter! Now with a RESTful API
   termsOfService: https://usersnap.com/terms-of-service
   contact:
@@ -11,13 +11,13 @@ info:
 servers:
 - url: https://platform.usersnap.com/v0.1
 tags:
-- name: project
+- name: Project
   description: Project related endpoints
 paths:
   /projects:
     get:
       tags:
-      - project
+      - Project
       summary: Get all projects
       description: List all projects that are available for the current user
       operationId: getProjects

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Usersnap feedback submit API
+  title: Usersnap Submit API
   description: Make feedback matter! Now with a RESTful API
   termsOfService: https://usersnap.com/terms-of-service
   contact:
@@ -11,15 +11,63 @@ info:
 servers:
 - url: https://platform.usersnap.com/v0.1
 tags:
-- name: submit
+- name: Submit
   description: Submit feedback
 paths:
   /projects/{api_key}/feedbacks:
     post:
       tags:
-      - submit
+      - Submit
       summary: Submit feedback
-      description: "Through this endpoint you can submit feedback to a project with following data (all of the fields are optional):\n\n- Visitor:\nEmail of the person the feedback is from\n\n- Comment:\nA text value\n\n- Assignee:\nID of the assigned user (available through request to assignees endpoint) or email.\nIf not passed, the default assignee will be used. If null value is passed, the feedback will not be assigned to anyone.\n\n- Rating:\nIf the project is set up with NPS/5 star/5 smileys/thumbs up rating field, you can pass a rating field.\nIts value should be an integer between 1 and 10 for NPS, 1 and 5 for 5 star, 1 and 5 for 5 smileys, 1 and -1 for thumbs up/down.\n\n- Client:\nAn object, containing 3 fields:\n    - url - URL of the page, string\n    - screen_width - Screen width, as integer\n    - screen height - Screen height, as integer\n\n- Attachments:\nAn array of objects, each containing a file attachment, composed of 3 fields:\n    - content - content of the file encoded in base64\n    - filename - the name of the file\n    - mime_type - the mime type of the file\nMaximum size of each file is 20MiB.\n"
+      description: 'Through this endpoint you can submit feedback to a project with following data (all of the fields are optional):
+
+
+        - Visitor:
+
+        Email of the person the feedback is from
+
+
+        - Comment:
+
+        A text value
+
+
+        - Assignee:
+
+        ID of the assigned user (available through request to assignees endpoint) or email.
+
+        If not passed, the default assignee will be used. If null value is passed, the feedback will not be assigned to anyone.
+
+
+        - Rating:
+
+        If the project is set up with NPS/5 star/5 smileys/thumbs up rating field, you can pass a rating field.
+
+        Its value should be an integer between 1 and 10 for NPS, 1 and 5 for 5 star, 1 and 5 for 5 smileys, 1 and -1 for thumbs up/down.
+
+
+        - Client:
+
+        An object, containing 3 fields:
+
+        - url - URL of the page, string
+
+        - screen_width - Screen width, as integer
+
+        - screen height - Screen height, as integer
+
+
+        - Attachments:
+
+        An array of objects, each containing a file attachment, composed of 3 fields:
+
+        - content - content of the file encoded in base64
+
+        - filename - the name of the file
+
+        - mime_type - the mime type of the file
+
+        Maximum size of each file is 20MiB.'
       operationId: submitFeedback
       parameters:
       - $ref: '#/components/parameters/projectPathApiKey'

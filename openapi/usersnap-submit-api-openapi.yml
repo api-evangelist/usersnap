@@ -150,6 +150,18 @@ paths:
       - bearerAuth: []
       - {}
 components:
+  parameters:
+    projectPathApiKey:
+      name: api_key
+      in: path
+      description: Project API key
+      required: true
+      deprecated: false
+      allowEmptyValue: false
+      explode: false
+      allowReserved: false
+      schema:
+        type: string
   responses:
     Error:
       description: Error response
@@ -192,18 +204,6 @@ components:
               msg: Authorization failed
               errortype: WRONG_AUTH
               errordata: {}
-  parameters:
-    projectPathApiKey:
-      name: api_key
-      in: path
-      description: Project API key
-      required: true
-      deprecated: false
-      allowEmptyValue: false
-      explode: false
-      allowReserved: false
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http

@@ -64,7 +64,7 @@ tags_raw:
 - SaaS
 apis:
 - aid: usersnap:usersnap-feedback-api
-  name: Usersnap feedback API
+  name: Usersnap Feedback API
   description: Feedback related endpoints
   humanURL: https://help.usersnap.com/reference/rest-api
   baseURL: https://platform.usersnap.com/v0.1
@@ -80,7 +80,7 @@ apis:
   - type: SwaggerHub
     url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
 - aid: usersnap:usersnap-pre-submit-api
-  name: Usersnap pre_submit API
+  name: Usersnap Pre Submit API
   description: Available options for submission
   humanURL: https://help.usersnap.com/reference/rest-api
   baseURL: https://platform.usersnap.com/v0.1
@@ -95,7 +95,7 @@ apis:
   - type: SwaggerHub
     url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
 - aid: usersnap:usersnap-project-api
-  name: Usersnap project API
+  name: Usersnap Project API
   description: Project related endpoints
   humanURL: https://help.usersnap.com/reference/rest-api
   baseURL: https://platform.usersnap.com/v0.1
@@ -111,7 +111,7 @@ apis:
   - type: SwaggerHub
     url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
 - aid: usersnap:usersnap-submit-api
-  name: Usersnap submit API
+  name: Usersnap Submit API
   description: Submit feedback
   humanURL: https://help.usersnap.com/reference/rest-api
   baseURL: https://platform.usersnap.com/v0.1

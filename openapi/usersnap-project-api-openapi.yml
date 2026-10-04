@@ -103,26 +103,6 @@ paths:
       - bearerAuth: []
 components:
   responses:
-    UnauthorizedError:
-      description: Authorization header missing or invalid
-      content:
-        application/json:
-          schema:
-            properties:
-              status:
-                type: boolean
-              msg:
-                type: string
-              errortype:
-                type: string
-              errordata:
-                type: object
-            type: object
-            example:
-              status: false
-              msg: Authorization failed
-              errortype: WRONG_AUTH
-              errordata: {}
     Error:
       description: Error response
       content:
@@ -144,6 +124,26 @@ components:
               errortype: SITE_NOT_FOUND
               errordata:
                 site_id: 50c4cdd6-4801-42b9-b785-b5cf90fcbb65
+    UnauthorizedError:
+      description: Authorization header missing or invalid
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Authorization failed
+              errortype: WRONG_AUTH
+              errordata: {}
   securitySchemes:
     bearerAuth:
       type: http

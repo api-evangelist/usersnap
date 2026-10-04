@@ -315,48 +315,19 @@ paths:
       security:
       - bearerAuth: []
 components:
+  parameters:
+    projectPathId:
+      name: project_id
+      in: path
+      description: Project ID
+      required: true
+      deprecated: false
+      allowEmptyValue: false
+      explode: false
+      allowReserved: false
+      schema:
+        type: string
   responses:
-    UnauthorizedError:
-      description: Authorization header missing or invalid
-      content:
-        application/json:
-          schema:
-            properties:
-              status:
-                type: boolean
-              msg:
-                type: string
-              errortype:
-                type: string
-              errordata:
-                type: object
-            type: object
-            example:
-              status: false
-              msg: Authorization failed
-              errortype: WRONG_AUTH
-              errordata: {}
-    Error:
-      description: Error response
-      content:
-        application/json:
-          schema:
-            properties:
-              status:
-                type: boolean
-              msg:
-                type: string
-              errortype:
-                type: string
-              errordata:
-                type: object
-            type: object
-            example:
-              status: false
-              msg: Site does not exist
-              errortype: SITE_NOT_FOUND
-              errordata:
-                site_id: 50c4cdd6-4801-42b9-b785-b5cf90fcbb65
     ProjectFeedbackList:
       description: List of feedbacks
       content:
@@ -541,18 +512,47 @@ components:
                   query_string: limit=1&after=f5150fc1-a7c9-4e33-8bd5-7a9cf3423e32
                   limit: 1
                   after: f5150fc1-a7c9-4e33-8bd5-7a9cf3423e32
-  parameters:
-    projectPathId:
-      name: project_id
-      in: path
-      description: Project ID
-      required: true
-      deprecated: false
-      allowEmptyValue: false
-      explode: false
-      allowReserved: false
-      schema:
-        type: string
+    Error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Site does not exist
+              errortype: SITE_NOT_FOUND
+              errordata:
+                site_id: 50c4cdd6-4801-42b9-b785-b5cf90fcbb65
+    UnauthorizedError:
+      description: Authorization header missing or invalid
+      content:
+        application/json:
+          schema:
+            properties:
+              status:
+                type: boolean
+              msg:
+                type: string
+              errortype:
+                type: string
+              errordata:
+                type: object
+            type: object
+            example:
+              status: false
+              msg: Authorization failed
+              errortype: WRONG_AUTH
+              errordata: {}
   securitySchemes:
     bearerAuth:
       type: http

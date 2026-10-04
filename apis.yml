@@ -127,6 +127,9 @@ apis:
   - type: SwaggerHub
     url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
 common:
+- type: CapabilityMap
+  url: capabilities/usersnap-capability-edges.yml
+  name: Usersnap Business Capability Map
 - type: Overlay
   url: overlays/usersnap-api-overlay.yaml
 - type: PostmanWorkspace

@@ -45,7 +45,7 @@ accessModel:
 image: https://github.com/usersnap.png
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 tags:
 - Company
 - Feedback
@@ -127,6 +127,10 @@ apis:
   - type: SwaggerHub
     url: https://app.swaggerhub.com/apis/usersnap6/usersnap-api/0.1
 common:
+- url: https://usersnap.com/blog/
+  type: Blog
+- url: https://usersnap.com/blog/feed/
+  type: BlogRSS
 - type: CapabilityMap
   url: capabilities/usersnap-capability-edges.yml
   name: Usersnap Business Capability Map

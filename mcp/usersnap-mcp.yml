@@ -44,3 +44,19 @@ deployment:
   probe: gated
   checked: '2026-08-12'
   source: catalog MCP census
+rfc9728:
+  endpoint: https://mcp.usersnap.com/mcp
+  metadata_url: https://mcp.usersnap.com/.well-known/oauth-protected-resource
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://mcp.usersnap.com/mcp
+    authorization_servers:
+    - https://id.usersnap.com
+    scopes_supported:
+    - read:feedback
+    - write:opportunity
+    bearer_methods_supported:
+    - header

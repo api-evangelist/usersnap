@@ -4,6 +4,7 @@ checked:
 - https://marketplace.atlassian.com/
 - https://zapier.com/api/v4/apps/
 - wordpress/integrations/wordpress-integration-edges.yml
+- zoom/integrations/zoom-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: Atlassian Marketplace
@@ -63,5 +64,22 @@ edges:
   detected: '2026-10-15'
   detected_by: mirror-platform-listings.py
   category: WordPress plugin
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/i1gTwItxSbG_lRE1CYgn2A
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - Usersnap
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
 source:
 - https://marketplace.atlassian.com/

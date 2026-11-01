@@ -64,6 +64,148 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Usersnap is a company surfaced as a portfolio company of speedinvest and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Usersnap is a user feedback platform from Perg/Linz, Austria that lets product, development, customer success, and marketing teams capture, organize, and act on user feedback with embeddable widgets for screenshots, screen recordings, ratings, and surveys. Beyond the widgets, Usersnap ships a plan-gated platform REST API (JWT bearer auth) for submitting and querying feedback, HMAC-signed webhooks, an official npm browser package, and a hosted MCP server (mcp.usersnap.com) secured with OAuth 2.1 + PKCE so AI assistants can query feedback and create opportunities.
 
-Backed by: speedinvest
+**Areas:** Company · Feedback · Bug Tracking · Customer Experience · Product Management · Surveys · Software-as-a-Service
+
+## Usersnap on APIs.io
+
+Everything profiled for Usersnap is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/usersnap/](https://apis.io/providers/usersnap/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [Usersnap Feedback API](https://apis.io/apis/usersnap/usersnap-feedback-api/) — Feedback related endpoints
+- [Usersnap Pre Submit API](https://apis.io/apis/usersnap/usersnap-pre-submit-api/) — Available options for submission
+- [Usersnap Project API](https://apis.io/apis/usersnap/usersnap-project-api/) — Project related endpoints
+- [Usersnap Submit API](https://apis.io/apis/usersnap/usersnap-submit-api/) — Submit feedback
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Usersnap Webhooks](https://apis.io/asyncapis/usersnap/usersnap-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [usersnap](https://apis.io/servers/usersnap/usersnap/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Usersnap Agentic Access](https://apis.io/agentic-access/usersnap/usersnap-agentic-access/)
+
+#### Collections (8)
+
+Postman and Open Collection request collections.
+
+- [Usersnap feedback API](https://apis.io/collections/usersnap/open-usersnap-feedback-api/)
+- [Usersnap feedback pre_submit API](https://apis.io/collections/usersnap/open-usersnap-pre-submit-api/)
+- [Usersnap feedback project API](https://apis.io/collections/usersnap/open-usersnap-project-api/)
+- [Usersnap feedback submit API](https://apis.io/collections/usersnap/open-usersnap-submit-api/)
+- [Usersnap feedback API](https://apis.io/collections/usersnap/postman-usersnap-feedback-api/)
+- [Usersnap feedback pre_submit API](https://apis.io/collections/usersnap/postman-usersnap-pre-submit-api/)
+- [Usersnap feedback project API](https://apis.io/collections/usersnap/postman-usersnap-project-api/)
+- [Usersnap feedback submit API](https://apis.io/collections/usersnap/postman-usersnap-submit-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Usersnap Api Overlay](https://apis.io/overlays/usersnap/usersnap-api-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Usersnap Authentication](https://apis.io/security/usersnap/usersnap-authentication/)
+- [Usersnap Domain Security](https://apis.io/security/usersnap/usersnap-domain-security/)
+- [Usersnap Trust Center](https://apis.io/security/usersnap/usersnap-trust-center/)
+- [Usersnap Vulnerability Disclosure](https://apis.io/security/usersnap/usersnap-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Usersnap Scopes](https://apis.io/scopes/usersnap/usersnap-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://usersnap.com)
+- [Documentation](https://help.usersnap.com/docs/getting-started-with-usersnap)
+- [Getting started](https://help.usersnap.com/docs/getting-started-with-usersnap)
+- [API reference](https://help.usersnap.com/reference/rest-api)
+- [Pricing](https://usersnap.com/pricing)
+- [Sign up](https://usersnap.com/signup)
+- [Support](https://usersnap.com/contact)
+- [Changelog](https://portal.usersnap.com/changelog/2bdcb520-7c12-4691-b9fe-94784b8bd8d6)
+- [Blog](https://usersnap.com/blog/)
+- [Security](https://usersnap.com/security)
+- [Compliance](https://usersnap.com/security)
+- [Terms of service](https://usersnap.com/terms-of-service)
+- [Privacy policy](https://usersnap.com/privacy-policy)
+- [GitHub](https://github.com/usersnap)
+- [Status](https://status.usersnap.com/)
+
+## API Evangelist rating
+
+**Kin Score 54.6** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 57.1 |
+| Contract governance | 4.5 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 53.0 |
+| Access clarity | 60.5 |
+
+**Agent readiness 51.9** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 45.1** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/usersnap/](https://apis.io/providers/usersnap/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Usersnap: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/usersnap/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
